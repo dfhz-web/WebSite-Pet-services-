@@ -1,5 +1,5 @@
 <nav class="bg-gray-800" x-data="{open: false}">
-  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
     <div class="relative flex items-center justify-between h-16">
 
       <!-- Mobile menu button-->
@@ -51,11 +51,18 @@
  
 
 
-              <div class="py-6" x-data="{open:false}">
-              <a href="{{ route('posts.index') }}"  x-on:click="open = true" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-              Blog
+              <div class="py-6 relative" x-data="{open:false}">
+                
+              <a href="{{ route('posts.index') }}"   href="#" class="relative text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                 Blog
               </a>
-              <div class="origin-top-right absolute right-2000 mt-6 w-56 rounded-md shadow-lg bg-white ring-1 ring-blue ring-opacity-5">
+              <div class="absolute bottom-0 left-5 cursor-pointer " x-on:click="open = true">
+                ...
+              </div>
+              
+              
+            
+             <div class="origin-top-right absolute right-2000 mt-6 w-56 rounded-md shadow-lg bg-white ring-1 ring-blue ring-opacity-5">
                 
                 <div>
                 
@@ -64,14 +71,14 @@
                 </div>
                 @foreach ($categories as $category)
                 <div>
-                <a x-show="open" x-on:click.away="open = false" href="#" >
+                <a x-show="open" x-on:click.away="open = false" href="{{route('posts.category',$category)}}" >
                   {{$category->name}}
                 </a>
                 </div>
               @endforeach
             </div>
             </div>   
-
+            
 
 
 
@@ -212,11 +219,12 @@
 
       
       <div class="py-6" x-data="{open:false}">
-        <a href="{{ route('posts.index') }}" x-on:click="open = true" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-         
-          Blog
-       
+        <a   x-on:click="open = true"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+           Blog
         </a>
+       
+
+        
         <div class="origin-top-right absolute right-2000 mt-6 w-56 rounded-md shadow-lg bg-white ring-1 ring-blue ring-opacity-5">
           
           <div>
@@ -226,7 +234,7 @@
           </div>
           @foreach ($categories as $category)
           <div>
-          <a x-show="open" x-on:click.away="open = false" href="#" >
+          <a href="{{route('posts.category',$category)}}"  x-show="open" x-on:click.away="open = false" >
             {{$category->name}}
           </a>
           </div>
