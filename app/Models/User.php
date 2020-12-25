@@ -64,4 +64,67 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+
+
+    ///Relacion uno a uno
+    public function profile()
+   {
+       return $this->hasOne('App\Models\Profile');
+   }
+
+   ///relacion uno a muchos
+   public function modules_dictated()
+   {
+       return $this->hasMany('App\Models\Module');
+   }
+
+   ///relacion muchos a muchos
+   public function modules_enrolled()
+   {
+       return $this->belongsToMany('App\Models\Module');
+   }
+
+   ///Relacion uno a muchos
+   public function reviews()
+   {
+       return $this->hasMany('App\Models\Review');
+   }
+
+
+    ///Relacion uno a muchos
+    public function obtain()
+    {
+        return $this->hasMany('App\Models\Obtain');
+    }
+
+    ///relacion muchos a muchos
+   public function Provider()
+   {
+       return $this->belongsToMany('App\Models\Provider');
+   }
+
+      ///relacion muchos a muchos inversa
+      public function lessons()
+      {
+          return $this->belongsToMany('App\Models\Lesson');
+      }
+
+      ///uno a muchos
+
+      public function comments()
+      {
+          return $this->hasMany('App\Models\Comment');
+      }
+      public function reactions()
+      {
+          return $this->hasMany('App\Models\Reaction');
+      }
+
+
+
+
+
+
+
 }

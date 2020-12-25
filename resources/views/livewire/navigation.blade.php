@@ -1,6 +1,36 @@
-<nav class="bg-gray-800" x-data="{open: false}">
-  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
-    <div class="relative flex items-center justify-between h-16">
+@php
+    $nav_links = [
+      [
+        'name' => 'Dashboard',
+        'route' => route('homee'),
+        'active' => request()->routeIs('homee')
+      ],
+      [
+        'name' => 'Blog',
+        'route' =>  route('posts.index'),
+        'active' => request()->routeIs('posts.index')
+      ],
+      [
+        'name' => 'Modules',
+        'route' => ('#'),
+        'active' => false
+      ],
+      [
+        'name' => 'About us',
+        'route' => ('#'),
+        'active' => false
+      ],
+      [
+        'name' => 'contact us',
+        'route' => ('#'),
+        'active' => false
+      ],
+    ];
+@endphp
+
+<nav class="bg-gray-800 shadow" x-data="{open: false}">
+  <div class="shadow max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
+    <div class="shadow relative flex items-center justify-between h-16">
 
       <!-- Mobile menu button-->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -30,28 +60,59 @@
       <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
         
          <!--Logotipo-->
-         <a href="/" class="flex-shrink-0 flex items-center">
+         {{-- 1 --}}
+         {{-- <a href="/" class="flex-shrink-0 flex items-center">
           <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
           <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
-         </a>
+         </a> --}}
+             <!--Logotipo-->
+         <div class="flex-shrink-0 flex items-center">
+          <a href="{{ route('homee') }}">
+              <x-jet-application-mark class="block h-9 w-auto" />
+          </a>
+         </div>
+
 
 
 
         <!--menu-->
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-             <!-- <div class="py-6">
-             <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
-             </div> -->
-              
 
+           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+             
+             @foreach ($nav_links as $nav_link)
+                 
+            
+             <div class="py-6">
+             <a href="{{$nav_link['route']}}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" :active="$nav_link['active']">
+             {{$nav_link['name']}}
+             </a>
+             </div> 
+         
+
+             @endforeach
+{{-- 
+              @foreach ($nav_links as $nav_link)
+                 
+            
+             
+              <x-jet-nav-link href="{{$nav_link['route']}}" class=" text-white px-3 py-2 rounded-md text-sm font-bold" :active="$nav_link['active']">
+              {{$nav_link['name']}}
+              </x-jet-nav-link>
+            
+         
+            
+ 
+              @endforeach  --}}
+
+            
       
         
  
 
 
-              <div class="py-6 relative" x-data="{open:false}">
+              {{-- <div class="py-6 relative" x-data="{open:false}">
                 
               <a href="{{ route('posts.index') }}"   href="#" class="relative text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                  Blog
@@ -86,22 +147,6 @@
 
                   
       
-             {{-- <div class="py-6" x-data="{open:false}">
-              <a  x-on:click="open = true" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-              Blog
-              </a>
-              <div class="origin-top-right absolute right-2000 mt-6 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-              @foreach ($categories as $category)
-                <div>
-                <a x-show="open" x-on:click.away="open = false" href="#" >
-                  {{$category->name}}
-                </a>
-                </div>
-              @endforeach
-            </div>
-            </div>   
- --}}
-
             
 
 
@@ -122,17 +167,24 @@
 
 
 
-             <!-- <div class="py-6">
-             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Modules</a>
+            <div class="py-6">
+             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              Modules
+             </a>
              </div> 
             
-            <div class="py-6">
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About us</a>
+             <div class="py-6">
+             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              About us
+             </a>
              </div>
 
-            <div class="py-6">
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact us</a>
-            </div> -->
+             <div class="py-6">
+             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              Contact us
+             </a>
+
+             </div> --}}
           </div>
         </div>
       </div>
@@ -215,13 +267,12 @@
     <div class="px-2 pt-2 pb-3 space-y-1">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
-      {{-- <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a> --}}
 
       
-      <div class="py-6" x-data="{open:false}">
+      {{-- <div class="py-6" x-data="{open:false}">
         <a   x-on:click="open = true"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
            Blog
-        </a>
+      </a>
        
 
         
@@ -239,16 +290,24 @@
           </a>
           </div>
         @endforeach
-      </div>
-      </div>   
+        </div>
+        </div>    --}}
+        
+       @foreach ($nav_links as $nav_link)
+           
+      
+       <a href="{{ $nav_link['route'] }}"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" :active="$nav_link['active']">
+        {{$nav_link['name']}}
+       </a>
 
-      {{-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a> --}}
+       @endforeach
       
       
-      
-      {{-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Modules</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About us</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact us</a> --}}
+       {{-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+
+       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Modules</a>
+       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About us</a>
+       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact us</a> --}}
     </div>
   </div>
 </nav>
