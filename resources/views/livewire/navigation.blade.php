@@ -2,8 +2,8 @@
     $nav_links = [
       [
         'name' => 'Dashboard',
-        'route' => route('homee'),
-        'active' => request()->routeIs('homee')
+        'route' => route('home'),
+        'active' => request()->routeIs('home')
       ],
       [
         'name' => 'Blog',
@@ -12,8 +12,8 @@
       ],
       [
         'name' => 'Modules',
-        'route' => ('#'),
-        'active' => false
+        'route' =>   route('modules.index'),
+        'active' => request()->routeIs('modules.index')
       ],
       [
         'name' => 'About us',
@@ -67,7 +67,7 @@
          </a> --}}
              <!--Logotipo-->
          <div class="flex-shrink-0 flex items-center">
-          <a href="{{ route('homee') }}">
+          <a href="{{ route('home') }}">
               <x-jet-application-mark class="block h-9 w-auto" />
           </a>
          </div>
@@ -81,7 +81,7 @@
 
            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
              
-             @foreach ($nav_links as $nav_link)
+             {{-- @foreach ($nav_links as $nav_link)
                  
             
              <div class="py-6">
@@ -91,9 +91,9 @@
              </div> 
          
 
-             @endforeach
-{{-- 
-              @foreach ($nav_links as $nav_link)
+             @endforeach --}}
+
+             @foreach ($nav_links as $nav_link)
                  
             
              
@@ -104,7 +104,7 @@
          
             
  
-              @endforeach  --}}
+              @endforeach 
 
             
       
@@ -263,8 +263,9 @@
 
  
 <!--menu movil cuando queda peque;o -->
-  <div class="sm:hidden" x-show="open" x-on:click.away="open = false">
-    <div class="px-2 pt-2 pb-3 space-y-1">
+ 
+  <div class="sm:hidden"  >
+    <div class="px-2 pt-2 pb-3 space-y-1" >
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
 
@@ -296,7 +297,7 @@
        @foreach ($nav_links as $nav_link)
            
       
-       <a href="{{ $nav_link['route'] }}"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" :active="$nav_link['active']">
+       <a  href="{{ $nav_link['route'] }}"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" :active="$nav_link['active']">
         {{$nav_link['name']}}
        </a>
 

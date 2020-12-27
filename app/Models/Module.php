@@ -9,22 +9,60 @@ class Module extends Model
 {
 
     protected $guarded = ['id','status'];
+    protected $withCount = ['beneficiaries','reviews'];
+
     use HasFactory;
     const eraser = 1;
     const check = 2;
     const published = 3;
 
+    public function getRatingAttribute()
+    {
+        if($this->reviews_count)
+        {
+            return round($this->reviews->avg('rating'),1);
+
+        }
+        else{
+            return 5;
+        }
+        
+    }
+
+    //Query Scopes/
+
+    public function scopeType($query, $type_id)
+    {
+       if($type_id){
+           return $query->where('type_id',$type_id);
+       }
+    }
+
+    public function scopeKind($query, $kind_id)
+    {
+       if($kind_id){
+           return $query->where('kind_id',$kind_id);
+       }
+    }
+
+    ////more different
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
 
     //relacion uno a muchos inversa
 
-    public function Managment()
+    public function managment()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
 
        ///relacion muchos a muchos inversa
 
-   public function Beneficiaries()
+   public function beneficiaries()
    {
        return $this->belongsToMany('App\Models\User');
    }

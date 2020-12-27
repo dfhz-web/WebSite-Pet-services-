@@ -1,15 +1,15 @@
 <?php
 
-use App\Http\Controllers\HomeeController;
+
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostController;
 
-Route::get('/', function () {
-     return view('welcome');
-});
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ModuleController;
+use App\Models\Module;
 
-Route::get('/',[HomeeController::class ,'index'])->name('homee');
+Route::get('/',HomeController::class)->name('home');
 
 Route::resource('posts', PostController::class);
 
@@ -22,3 +22,11 @@ Route::get('tag/{tag}',[PostController::class, 'tag'])->name('posts.tag');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
      return view('dashboard');
 })->name('dashboard');
+
+Route::get('modules',[ModuleController::class,'index'])->name('modules.index');
+
+Route::get('modules/{module}', function($module)
+{
+    return "here is where the course will be shown";
+})->name('modules.show');
+

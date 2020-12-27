@@ -21,7 +21,7 @@ class ModuleSeeder extends Seeder
      */
     public function run()
     {
-        $modules = Module::factory(40)->create();
+        $modules = Module::factory(100)->create();
 
         foreach ($modules as $module) {
              Picture::factory(1)->create([

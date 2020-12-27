@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+
 use App\Models\Picture;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,9 +24,9 @@ class PictureFactory extends Factory
     {
         return [
             'url' => 'modules/' . $this->faker->image('public/storage/modules',640,480, null, false),
-            // 'pictureable_id' => null,
-            // 'pictureable_type' => null,
-
+            
+ 
+          
         
         ];
     }

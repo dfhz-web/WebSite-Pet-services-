@@ -34,7 +34,7 @@ class ModuleFactory extends Factory
            'description' => $this->faker->paragraph(),
            'status' => $this->faker->randomElement([Module::eraser,Module::check,Module::published]),
            'slug'=> Str::slug($title),
-           'user_id' => User::all()->random()->id,
+           'user_id' => 1,
            'kind_id' => Kind::all()->random()->id,
            'type_id' => Type::all()->random()->id,
            'price_id' => Price::all()->random()->id,
