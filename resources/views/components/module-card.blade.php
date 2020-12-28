@@ -1,9 +1,12 @@
 @props(['module'])
 
-<article class="bg-white shadow-lg rounded overflow-hidden">
+<article class="card">
     <img class="h-36 w-full object-cover object-center" src="{{Storage::url($module->picture->url)}}" alt="">
-    <div class="px-6 py-4">
-          <h1 class="text-xl text-gray-700 mb-2 leading-6">
+    
+    
+    <div class="card-body">
+
+          <h1 class="card-title">
             {{Str::limit($module->title, 40)}}
           <h1>
             <p class="text-gray-500 text-sm mb-2">

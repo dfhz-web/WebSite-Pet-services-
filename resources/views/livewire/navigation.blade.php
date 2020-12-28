@@ -8,12 +8,12 @@
       [
         'name' => 'Blog',
         'route' =>  route('posts.index'),
-        'active' => request()->routeIs('posts.index')
+        'active' => request()->routeIs('posts.*')
       ],
       [
         'name' => 'Modules',
         'route' =>   route('modules.index'),
-        'active' => request()->routeIs('modules.index')
+        'active' => request()->routeIs('modules.*')
       ],
       [
         'name' => 'About us',
@@ -29,7 +29,7 @@
 @endphp
 
 <nav class="bg-gray-800 shadow" x-data="{open: false}">
-  <div class="shadow max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
+  <div class="container">
     <div class="shadow relative flex items-center justify-between h-16">
 
       <!-- Mobile menu button-->
