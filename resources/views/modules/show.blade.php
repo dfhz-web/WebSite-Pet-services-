@@ -39,7 +39,7 @@
 
 
 
-        <div class="container grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-x-9 gap-y-9">
+        <div class="container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-9 gap-y-9">
             <div>
 
 
@@ -47,7 +47,26 @@
                   
                          
                     <div class="py-10 px-20 bg-cover rounded-full shadow-lg"  style="background-image: url({{asset('storage/others/take.jpg')}})">
-                        <a href="" class="py-2 sm:px-10 btn btn-danger btn-block">Get start it!</a>
+                        {{-- <a href="{{route('modules.getting',$module)}}" class="py-2 sm:px-10 btn btn-danger btn-block">Get start it!</a> --}}
+                        
+                        @can('alreadyEnrolled',$module)
+                                   
+                           <a href="{{route('modules.status',$module)}}" class="py-2 sm:px-10 btn btn-danger btn-block" type="submit">Continue with request!</a>
+                      
+                             
+                    
+                        @else      
+                
+
+                           <form action="{{route('modules.getting',$module)}}" method="post">
+                              @csrf
+                               <button class="py-2 sm:px-10 btn btn-danger btn-block" type="submit">Get start it!</button>
+                           </form>
+
+                            
+                        @endcan
+                        
+                       
                     </div>
                     
 
@@ -57,7 +76,7 @@
 
                
 
-                <section class="mb-20">
+                <section class="mb-8">
                     <br>
                     <br>
                     <h1 class="font-bold text-3xl">Requirements</h1>
@@ -69,18 +88,28 @@
     
                 </section>
 
-                <aside class="grid grid-cols-2 gap-3">
+
+                <aside class="hidden lg:block grid grid-cols-2 gap-x-10 gap-y-10 mt-10">
+                    
                     @foreach ( $similars as $similar)
-                         <div>
-                               <a class="font-bold text-gray-500" href="">{{Str::limit($similar->title,40)}}</a>
-                                <p class="mt-2 text-sm"><i class="fas fa-star mr-2 text-yellow-400"></i>{{$similar->rating}}</p>
-                                <a href="{{route('modules.show',$similar)}}" class="py-2 sm:px-10 btn btn-gray btn-block">Go!</a>
-                         </div>
+                  
+                        
                         <article class="flex mb-6">
                             <img class=" h-32 w-40 object-cover object-center src="{{Storage::url($similar->picture->url)}}" alt="">
-                            
+                            <div class="ml-3">
+                                <h1>
+                                    <a class="font-bold text-gray-500" href="">{{Str::limit($similar->title,40)}}</a>
+                                    <p class="mt-2 text-sm"><i class="fas fa-star mr-2 text-yellow-400"></i>{{$similar->rating}}</p>
+
+                                </h1>
+                                
+                                 <div class="flex">
+                                 <a href="{{route('modules.show',$similar)}}" class="py-2 sm:px-10 btn btn-gray btn-block">Go!</a>
+                                 </div>
+                             </div>
 
                         </article>
+                   
                     @endforeach
                 </aside>
 
@@ -88,12 +117,12 @@
                
             </div>
 
-            <div class="col-span-2">
+            <div class="lg:col-span-2">
                 <section class="card mb-10">
                     <div class="card-body">
                         <h1 class="font-bold text-2xl mb-2">Take in main</h1>
 
-                        <ul class="grid grid-cols-2 gap-x-4 gap-y-2">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2">
                             @foreach ($module->goals as $goal)
                                 <li class="text-gray-700 text-base"><i class="fas fa-bullseye text-red-400 mr-2"></i>..{{$goal->name}}</li>
                             @endforeach

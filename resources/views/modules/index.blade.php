@@ -10,15 +10,9 @@
 
               <!-- component -->
               <!-- This is an example component -->
-             <div class="pt-2 relative mx-auto text-gray-600">
-             <input class="w-full border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-               type="search" name="search" placeholder="Search">
-             
-               <button type="submit"  class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg absolute right-0 top-0 mt-2 ">
-                Search
-              </button>
-             
-          </div>
+              {{-- i used livewire to complemet this view with the componente of livewire for search use in home --}}
+              @livewire('search')
+            
         
           </div>
         </div>

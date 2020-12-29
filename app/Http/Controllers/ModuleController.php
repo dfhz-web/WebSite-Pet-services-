@@ -23,4 +23,17 @@ class ModuleController extends Controller
                            ->get();
         return view('modules.show', compact('module','similars'));
     }
+
+    public function getting(Module $module)
+    {
+       $module->beneficiaries()->attach(auth()->user()->id);
+       return redirect()->route('modules.status',$module);
+    }
+
+
+    // it is not necessaty due that iam using livewire like a controller
+    // public function status(Module $module)
+    // {
+    //      return view('modules.status', compact('module'));
+    // }
 }
