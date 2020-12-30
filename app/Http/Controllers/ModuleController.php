@@ -32,8 +32,5 @@ class ModuleController extends Controller
 
 
     // it is not necessaty due that iam using livewire like a controller
-    // public function status(Module $module)
-    // {
-    //      return view('modules.status', compact('module'));
-    // }
+ 
 }

@@ -117,7 +117,7 @@ class Module extends Model
     }
 
 
-    ///
+    ///hasManyThrough
     public function lessons()
     {
         return $this->hasManyThrough('App\Models\Lesson', 'App\Models\Section');

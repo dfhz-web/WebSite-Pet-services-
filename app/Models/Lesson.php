@@ -11,6 +11,12 @@ class Lesson extends Model
     protected $guarded = ['id'];
     use HasFactory;
 
+    public function getCompleteAttribute()
+    {
+       return  $this->users->contains(auth()->user()->id);
+    } 
+
+
     ///relacion uno a muchos inversa
     public function section()
     {
