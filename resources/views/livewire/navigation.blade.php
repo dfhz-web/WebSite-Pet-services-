@@ -17,8 +17,8 @@
       ],
       [
         'name' => 'About us',
-        'route' => ('#'),
-        'active' => false
+        'route' => route('aboutus'),
+        'active' => request()->routeIs('aboutus')
       ],
       [
         'name' => 'contact us',

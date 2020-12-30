@@ -9,9 +9,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Livewire\ModuleStatus;
 use App\Models\Module;
-
+use App\Http\Controllers\SuggestionController;
+use App\Http\Controllers\AboutusController;
 
 Route::get('/',HomeController::class)->name('home');
+
+
+Route::get('about-us',AboutusController::class)->name('aboutus');
 
 Route::resource('posts', PostController::class);
 
@@ -40,3 +44,31 @@ Route::post('modules/{module}/getting',[ModuleController::class,'getting'])->mid
 
 // use livewire like controller
 Route::get('status-now-module/{module}',ModuleStatus::class)->name('modules.status');
+
+///khlashf
+
+// Route::get('suggestions', function()
+// {
+   
+// });
+
+// Route::get('suggestions/create', function () {
+   
+//  });
+
+// Route::get('suggestions/{suggestion}', function($suggestion)
+// {
+//    return "welcome to possible suggestions $suggestion";
+// });
+
+// Route::get('suggestions/{suggestion}/{shape?}', function ($suggestion, $shape = null) {
+//     if($shape)
+//     {
+//      return "Welcome to the suggestion $suggestion, of the category of $shape";
+//     }
+//     else{
+//      return "welcome to possible suggestions $suggestion";
+//     }
+    
+    
+// });
