@@ -1,5 +1,5 @@
 
-  
+  <div>
      <section class="mt-1 bg-gray-700 py-0 text-center text-7xl">
         <div class="text-5xl font-extrabold ...">
             <span class="text-center text-4xl bg-clip-text text-transparent 
@@ -33,7 +33,7 @@
                                   <ul>
                                       @foreach ($section->lessons as $lesson)
                                         <li>
-                                            <a class="cursor-pointer" wire:click="lessonChange({{$lesson}})">
+                                            <a class="cursor-pointer" wire:click="lessonchange({{$lesson}})">
                                                 {{$lesson->id}} 
                                                 @if($lesson->complete)
                                                 (completed)
@@ -61,3 +61,6 @@
               </div>
             </div>
       </div>
+
+
+  </div>

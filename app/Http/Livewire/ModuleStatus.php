@@ -29,7 +29,7 @@ class ModuleStatus extends Component
         return view('livewire.module-status');
     }
 
-    public function lessonChange(Lesson $lesson)
+    public function lessonchange(Lesson $lesson)
     {
          $this->currently = $lesson;  
     }
