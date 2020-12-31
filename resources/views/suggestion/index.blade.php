@@ -2,7 +2,9 @@
   
     
     <div class=" container grid grid-cols-4 bg-cover" style="background-image: url({{asset('storage/another/touch.jpg')}})">
-        <div class="col-span-3">1</div>
+        <div class="col-span-3">
+            <a href="{{route('suggestions.create',$suggestions)}}" class="btn btn-primary btn-block btn-primary:hover">Fill out request</a>
+        </div>
         <div class="">
             <section class="mb-12">
 
