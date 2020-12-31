@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\Category;
+use App\Models\Suggestion;
 use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
@@ -42,6 +43,9 @@ class DatabaseSeeder extends Seeder
        $this->call(PlatformSeeder::class);
 
        $this->call(ModuleSeeder::class);
+
+
+       $this->call(SuggestionSeeder::class);
 
 }
 }

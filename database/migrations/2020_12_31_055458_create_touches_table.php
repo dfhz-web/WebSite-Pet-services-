@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuggestionsTable extends Migration
+class CreateTouchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,8 @@ class CreateSuggestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('suggestions', function (Blueprint $table) {
+        Schema::create('touches', function (Blueprint $table) {
             $table->id();
-
-            $table->text('question');
-            $table->text('answere');
-         
-            
-          
-       
-           
             $table->timestamps();
         });
     }
@@ -34,6 +26,6 @@ class CreateSuggestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suggestions');
+        Schema::dropIfExists('touches');
     }
 }

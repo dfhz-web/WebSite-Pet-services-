@@ -22,8 +22,8 @@
       ],
       [
         'name' => 'contact us',
-        'route' => ('#'),
-        'active' => false
+        'route' => route('suggestions.index'),
+        'active' => request()->routeIs('suggestions.*')
       ],
     ];
 @endphp

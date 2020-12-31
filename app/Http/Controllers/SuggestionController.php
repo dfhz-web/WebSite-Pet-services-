@@ -10,7 +10,9 @@ class SuggestionController extends Controller
 {
     public function index()
     {
-        return view('suggestion.index');
+        $suggestions = Suggestion::paginate();
+        
+        return view('suggestion.index',compact('suggestions'));
     }
     public function create()
     {

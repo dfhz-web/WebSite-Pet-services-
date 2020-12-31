@@ -47,9 +47,9 @@ Route::get('status-now-module/{module}',ModuleStatus::class)->name('modules.stat
 
 //contactus
 
-Route::get('suggestions',[SuggestionController::class,'index'])->name('suggestions.show');
+Route::get('suggestions',[SuggestionController::class,'index'])->name('suggestions.index');
 
-Route::get('suggestions/create',[SuggestionController::class,'create'])->name('suggestions.show');
+Route::get('suggestions/create',[SuggestionController::class,'create'])->name('suggestions.create');
 
 Route::get('suggestions/{suggestion}',[SuggestionController::class,'show'])->name('suggestions.show');
 
