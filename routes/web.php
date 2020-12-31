@@ -29,9 +29,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
      return view('dashboard');
 })->name('dashboard');
 
+
+
 Route::get('modules',[ModuleController::class,'index'])->name('modules.index');
-
-
 
 Route::get('modules/{module}',[ModuleController::class,'show'])->name('modules.show');
 
@@ -45,21 +45,15 @@ Route::post('modules/{module}/getting',[ModuleController::class,'getting'])->mid
 // use livewire like controller
 Route::get('status-now-module/{module}',ModuleStatus::class)->name('modules.status');
 
-///khlashf
+//contactus
 
-// Route::get('suggestions', function()
-// {
-   
-// });
+Route::get('suggestions',[SuggestionController::class,'index'])->name('suggestions.show');
 
-// Route::get('suggestions/create', function () {
-   
-//  });
+Route::get('suggestions/create',[SuggestionController::class,'create'])->name('suggestions.show');
 
-// Route::get('suggestions/{suggestion}', function($suggestion)
-// {
-//    return "welcome to possible suggestions $suggestion";
-// });
+Route::get('suggestions/{suggestion}',[SuggestionController::class,'show'])->name('suggestions.show');
+
+
 
 // Route::get('suggestions/{suggestion}/{shape?}', function ($suggestion, $shape = null) {
 //     if($shape)

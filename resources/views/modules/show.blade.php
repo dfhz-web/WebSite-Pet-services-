@@ -46,7 +46,7 @@
                 <section class="">
                   
                          
-                    <div class="py-10 px-20 bg-cover rounded-full shadow-lg"  style="background-image: url({{asset('storage/others/take.jpg')}})">
+                    <div class="py-10 px-20 bg-cover rounded-full shadow-lg"  style="background-image: url({{asset('storage/another/take.jpg')}})">
                         {{-- <a href="{{route('modules.getting',$module)}}" class="py-2 sm:px-10 btn btn-danger btn-block">Get start it!</a> --}}
                         
                         @can('alreadyEnrolled',$module)

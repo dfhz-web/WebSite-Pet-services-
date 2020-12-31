@@ -28,8 +28,9 @@
     ];
 @endphp
 
-<nav class="bg-gray-800 shadow" x-data="{open: false}">
+<nav class="bg-gray-800 shadow" ">
   <div class="container">
+
     <div class="shadow relative flex items-center justify-between h-16">
 
       <!-- Mobile menu button-->
@@ -264,51 +265,21 @@
  
 <!--menu movil cuando queda peque;o -->
  
-  <div class="sm:hidden"  >
-    <div class="px-2 pt-2 pb-3 space-y-1" >
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-
-
+  <div class="sm:hidden" >
+    <div class="px-2 pt-2 pb-3 space-y-1"  >
       
-      {{-- <div class="py-6" x-data="{open:false}">
-        <a   x-on:click="open = true"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-           Blog
-      </a>
-       
-
-        
-        <div class="origin-top-right absolute right-2000 mt-6 w-56 rounded-md shadow-lg bg-white ring-1 ring-blue ring-opacity-5">
-          
-          <div>
-          
-          <h1 x-show="open" class=" rounded-md bg-auto bg-gray-300 animate-bounce w-58 h-6 ...">Categories</h1>
-      
-          </div>
-          @foreach ($categories as $category)
-          <div>
-          <a href="{{route('posts.category',$category)}}"  x-show="open" x-on:click.away="open = false" >
-            {{$category->name}}
-          </a>
-          </div>
-        @endforeach
-        </div>
-        </div>    --}}
-        
        @foreach ($nav_links as $nav_link)
            
       
-       <a  href="{{ $nav_link['route'] }}"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" :active="$nav_link['active']">
+       <a   href="{{ $nav_link['route'] }}"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" :active="$nav_link['active']">
         {{$nav_link['name']}}
        </a>
 
        @endforeach
-      
-      
-       {{-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
 
-       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Modules</a>
-       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About us</a>
-       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact us</a> --}}
+      
+      
+      
     </div>
   </div>
 </nav>

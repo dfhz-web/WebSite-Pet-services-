@@ -4,19 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Suggestion;
+
 class SuggestionController extends Controller
 {
     public function index()
     {
-        return 'welcome to possible suggestions';
+        return view('suggestion.index');
     }
     public function create()
     {
-        return "here you can create a request";
+        return view('suggestion.index');
     }
-    public function show()
+    public function show($suggestion)
     {
-
+        return view('suggestion.index',compact('suggestion'));
     }
 
 }
