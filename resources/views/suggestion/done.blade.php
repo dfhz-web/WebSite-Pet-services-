@@ -9,7 +9,7 @@
 
                 <div class="bg-orange-lightest border-l-4 border-orange text-orange-dark p-4" role="alert">
                     <p class="font-bold">Completed</p>
-                    <p>Your request has been successfully completed, We will be in touch as soon as</p>
+                    <p>Your request has been successfully completed, We will be in touch as soon as possible</p>
                   </div>
 
 

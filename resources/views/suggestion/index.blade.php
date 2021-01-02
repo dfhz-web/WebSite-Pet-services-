@@ -18,16 +18,27 @@
                 <label>
                     Name:
                       <br>
-                      <input type="text" name="name">
+                      <input type="text" name="name" value="{{old('name')}}">
                 </label>
+                @error('name')
+                    <br>
+                    <small>*{{$message}}</small>
+             
+                @enderror
         
                 <br>
                 <label>
                     <br>
                     Email:
                     <br>
-                    <input type="email" name="email">
+                    <input type="email" name="email" value="{{old('email')}}">
                 </label>
+                @error('email')
+                <br>
+                <small>*{{$message}}</small>
+         
+            @enderror
+    
                 <br>
 
         
@@ -36,32 +47,50 @@
                     Request:
                     
                     <br>
-                    <textarea name="requestt" rows="5"></textarea>
+                    <textarea name="requestt" rows="5">{{old('requestt')}}</textarea>
                 </label>
 
+                @error('requestt')
+                <br>
+                <small>*{{$message}}</small>
+         
+            @enderror
+
                 <BR>
-                    <button class="btn btn-primary" type="submit">Button</button>
+                    <button class="btn btn-primary" type="submit"> Send</button>
             </form>
            
 
              @else
-             
-             <form action="{{route('suggestions.store')}}" method="POST">
 
+
+             <form action="{{route('suggestions.store')}}" method="POST">
+            
                 @csrf
                 <label>
-                    Names:
+                    Name:
                       <br>
-                      <input type="text" name="name">
+                      <input type="text" name="name" value="{{old('name')}}">
                 </label>
+                @error('name')
+                    <br>
+                    <small>*{{$message}}</small>
+             
+                @enderror
         
                 <br>
                 <label>
                     <br>
                     Email:
                     <br>
-                    <input type="email" name="email">
+                    <input type="email" name="email" value="{{old('email')}}">
                 </label>
+                @error('email')
+                <br>
+                <small>*{{$message}}</small>
+         
+            @enderror
+    
                 <br>
 
         
@@ -70,12 +99,20 @@
                     Request:
                     
                     <br>
-                    <textarea name="requestt" rows="5"></textarea>
+                    <textarea name="requestt" rows="5">{{old('requestt')}}</textarea>
                 </label>
 
+                @error('requestt')
+                <br>
+                <small>*{{$message}}</small>
+         
+            @enderror
+
                 <BR>
-                    <button class="btn btn-primary" type="submit">Button</button>
+                    <button class="btn btn-primary" type="submit"> Send</button>
             </form>
+             
+            
             @endauth
 
 

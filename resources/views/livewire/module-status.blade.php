@@ -48,7 +48,17 @@
 
               </div>
                <div class="col-span-2">
-                 {!!$currently->iframe!!}
+
+                <div class="fix-responsive">
+                      {!!$currently->iframe!!}
+
+                </div>
+
+
+
+
+
+                
                  {{$currently->name}}
                  <p>Index: {{$this->index}}</p>
                  <p>Previous: @if ($this->previous)

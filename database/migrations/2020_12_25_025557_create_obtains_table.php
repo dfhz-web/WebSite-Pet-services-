@@ -21,6 +21,8 @@ class CreateObtainsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->text('address');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('phone');
             $table->text('symtoms');
 

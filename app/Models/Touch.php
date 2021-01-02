@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Touch extends Model
 {
     use HasFactory;
+    // protected $fillable = ['name','email','requestt'];
+    protected $guarded = [];
 
      // Relacioxkn uno a muchos a la inversas
      public function user()
