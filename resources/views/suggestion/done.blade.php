@@ -5,82 +5,13 @@
         <div class="col-span-3">
             {{-- <a href="{{route('suggestions.create',$suggestions)}}" class="btn btn-primary btn-block btn-primary:hover">Fill out request</a>
              --}}
-
-             
              <div class="mt-40 text-center">
-              
-                  
-            @auth
-           
-             <form action="{{route('suggestions.store')}}" method="POST">
-            
-                @csrf
-                <label>
-                    Name:
-                      <br>
-                      <input type="text" name="name">
-                </label>
-        
-                <br>
-                <label>
-                    <br>
-                    Email:
-                    <br>
-                    <input type="email" name="email">
-                </label>
-                <br>
 
-        
-                <label>
-                    <br>
-                    Request:
-                    
-                    <br>
-                    <textarea name="requestt" rows="5"></textarea>
-                </label>
+                <div class="bg-orange-lightest border-l-4 border-orange text-orange-dark p-4" role="alert">
+                    <p class="font-bold">Completed</p>
+                    <p>Your request has been successfully completed, We will be in touch as soon as</p>
+                  </div>
 
-                <BR>
-                    <button class="btn btn-primary" type="submit">Button</button>
-            </form>
-           
-
-             @else
-             
-             <form action="{{route('suggestions.store')}}" method="POST">
-
-                @csrf
-                <label>
-                    Names:
-                      <br>
-                      <input type="text" name="name">
-                </label>
-        
-                <br>
-                <label>
-                    <br>
-                    Email:
-                    <br>
-                    <input type="email" name="email">
-                </label>
-                <br>
-
-        
-                <label>
-                    <br>
-                    Request:
-                    
-                    <br>
-                    <textarea name="requestt" rows="5"></textarea>
-                </label>
-
-                <BR>
-                    <button class="btn btn-primary" type="submit">Button</button>
-            </form>
-            @endauth
-
-
-
-           
 
         </div>
 

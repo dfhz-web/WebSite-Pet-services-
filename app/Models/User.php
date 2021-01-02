@@ -121,6 +121,12 @@ class User extends Authenticatable
           return $this->hasMany('App\Models\Reaction');
       }
 
+      //relacion uno a muchos touches
+    public function touchess()
+    {
+        return $this->hasMany('App\Models\Touch');
+    }
+
 
 
 

@@ -22,7 +22,7 @@
       ],
       [
         'name' => 'contact us',
-        'route' => route('suggestions.index'),
+        'route' => route('suggestions.indexcreate'),
         'active' => request()->routeIs('suggestions.*')
       ],
     ];
