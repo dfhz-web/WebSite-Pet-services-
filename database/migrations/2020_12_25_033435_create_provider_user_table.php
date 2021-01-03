@@ -18,10 +18,10 @@ class CreateProviderUserTable extends Migration
 
             
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('obtain_id');
+         
    
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('obtain_id')->references('id')->on('obtains');
+       
             
             $table->timestamps();
         });
