@@ -44,7 +44,7 @@
                       <ul>
                           @foreach ($module->sections as $section)
                               <li class="text-gray-900 mb-4">
-                                  <a class="font-bold text-lg text-base inline-block mb-2 mt-5" href="">{{$section->name}}</a>
+                                  <a class="font-bold text-base inline-block mb-2 mt-5" href="">{{$section->name}}</a>
                                   <ul>
                                       @foreach ($section->lessons as $lesson)
                                         <li class="mb-3 flex">
@@ -111,7 +111,7 @@
                 {{-- Here then i place if there is a form or answere of form --}}
 
                  ////////////////////////////////////////////////////////////
-            <form action="{{route('obtains.store')}}" method="post">
+            <form action="{{route('data.store')}}" method="post">
             
                     @csrf
                      <label>
@@ -120,7 +120,7 @@
                           <input type="text" name="symptoms" value="{{old('symptoms')}}">
                       </label>
 
-                    @error('symptoms')
+                    @error('name')
                         <br>
                         <small>*{{$message}}</small>
                  
@@ -157,7 +157,7 @@
                 @enderror
     
                     <BR>
-                        <button class="btn btn-primary" type="submit"> Send</button>
+                        <button class="btn btn-primary" type="submit">Send</button>
             </form>
 
 

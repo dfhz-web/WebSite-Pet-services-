@@ -27,13 +27,7 @@ class SuggestionController extends Controller
     public function store(StoreSuggestion $request)
     {
 
-    //    $touches = new Touch();
 
-    //    $touches->name = $request->name;
-    //    $touches->email = $request->email;
-    //    $touches->requestt = $request->requestt;
-
-    //    $touches->save();
        
        $touches = Touch::create($request->all());
        

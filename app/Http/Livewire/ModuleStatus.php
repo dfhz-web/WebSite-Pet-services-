@@ -5,6 +5,9 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Module;
 use App\Models\Lesson;
+use App\Models\Data;
+use App\Http\Controllers\DataController;
+use App\Http\Requests\StoreData;
 
 class ModuleStatus extends Component
 {
