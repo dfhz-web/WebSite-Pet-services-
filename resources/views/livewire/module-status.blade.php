@@ -111,7 +111,7 @@
                 {{-- Here then i place if there is a form or answere of form --}}
 
                  ////////////////////////////////////////////////////////////
-            <form action="{{route('data.store')}}" method="post">
+            <form action="" method="post">
             
                     @csrf
                      <label>

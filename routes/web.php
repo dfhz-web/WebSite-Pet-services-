@@ -61,7 +61,7 @@ Route::get('suggestions/{suggestion}',[SuggestionController::class,'show'])->nam
 
 
 
-Route::post('fillout',[DataController::class,'store'])->name('data.store');
+
 
     
 
