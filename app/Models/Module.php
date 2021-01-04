@@ -12,6 +12,7 @@ class Module extends Model
     protected $withCount = ['beneficiaries','reviews'];
 
     use HasFactory;
+    
     const eraser = 1;
     const check = 2;
     const published = 3;

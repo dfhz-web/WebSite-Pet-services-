@@ -10,7 +10,8 @@ class AssistanceController extends Controller
     public function store(Request $request)
     {
         $assistances = Assistance::create($request->all());
-        return view('suggestion.done',compact('assistances'));
+        return 'well done';
+        // return view('suggestion.done',compact('assistances'));
     }
 
     

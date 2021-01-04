@@ -10,6 +10,12 @@ class Assistance extends Model
     use HasFactory;
     protected $guarded = [''];
 
+    const fill_out_empty = 0;
+    const fill_out = 1;
+
+    const result_empty = 0;
+    const result= 1;
+
     public function users()
     {
         return $this->belongsToMany('App\Models\User');

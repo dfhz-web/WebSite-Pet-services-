@@ -8,7 +8,7 @@ use App\Models\Lesson;
 use App\Models\Data;
 use App\Http\Controllers\DataController;
 use App\Http\Requests\StoreData;
-
+use App\Models\Assistance;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class ModuleStatus extends Component
@@ -17,9 +17,11 @@ class ModuleStatus extends Component
 
     public $currently;
     public $module;
+    public $assistance;
     
-    public function mount(Module $module)
+    public function mount(Module $module, Assistance $assistance)
     {
+        $this->assistance = $assistance;
         $this->module = $module;
         foreach ($module->lessons as $lesson) {
             ///si da false se le asigana el valor de esa leccion
@@ -70,6 +72,21 @@ class ModuleStatus extends Component
 
            $this->currently = Lesson::find($this->currently->id);
            $this->module = Module::find($this->module->id);
+       
+    }
+
+    //fill fill out and lesson of assistance.... in wait
+    public function complete()
+    {
+        // $this->assistance =  Assistance::create(['lesson_id' =>  $this->currently->id]);
+        if($this->currently->complete){
+            ///Delete data
+               $this->assistance->users()->detach(auth()->user()->id);
+             }
+            else{
+                ////add
+              $this->assistance->users()->attach(auth()->user()->id);
+            }
        
     }
 
