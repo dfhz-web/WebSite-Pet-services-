@@ -45,7 +45,7 @@ Route::post('modules/{module}/getting',[ModuleController::class,'getting'])->mid
 // Route::get('status-now-module/{module}',[ModuleController::class,'status'])->name('modules.status');
 
 // use livewire like controller
-Route::get('status-now-module/{module}',ModuleStatus::class)->name('modules.status');
+Route::get('status-now-module/{module}',ModuleStatus::class)->name('modules.status')->middleware('auth');
 
 //contactus
 
@@ -57,6 +57,7 @@ Route::post('suggestions',[SuggestionController::class,'store'])->name('suggesti
 // Route::get('suggestions/create',[SuggestionController::class,'create'])->name('suggestions.create');
 
 Route::get('suggestions/{suggestion}',[SuggestionController::class,'show'])->name('suggestions.show');
+
 
 Route::post('assistance',[AssistanceController::class,'store'])->name('assistance.store');
 

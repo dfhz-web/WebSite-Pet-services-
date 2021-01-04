@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Assistance extends Model
 {
     use HasFactory;
-
+    protected $guarded = [''];
 
     public function users()
     {
@@ -19,4 +19,12 @@ class Assistance extends Model
       {
           return $this->belongsTo('App\Models\Lesson');
       }
+    
+
+     ///fill out when assistance_id and user_id are there.
+      public function getCompleteAttribute()
+    {
+       return  $this->users->contains(auth()->user()->id);
+    } 
+
 }

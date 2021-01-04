@@ -69,4 +69,4 @@ class Lesson extends Model
    }
 }
 
-}
+

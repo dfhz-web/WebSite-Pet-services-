@@ -24,4 +24,15 @@ class ModulePolicy
        return $module->beneficiaries->contains($user->id);
       
     }
+
+    public function statusPublished(?User $user, Module $module)
+    {
+        if($module->status ==3){
+        return true;
+        }
+        else {
+            return false;
+        }
+
+    }
 }

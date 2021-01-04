@@ -9,8 +9,11 @@ use App\Models\Data;
 use App\Http\Controllers\DataController;
 use App\Http\Requests\StoreData;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 class ModuleStatus extends Component
 {
+    use AuthorizesRequests;
 
     public $currently;
     public $module;
@@ -29,6 +32,8 @@ class ModuleStatus extends Component
         if (!$this->currently) {
             $this->currently = $module->lessons->last();
         }
+
+        $this->authorize('alreadyEnrolled',$module);
 
     }
 

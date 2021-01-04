@@ -113,6 +113,11 @@
                  ////////////////////////////////////////////////////////////
                  @livewire('fillout')
 
+                 <br>
+                 <br>
+
+                 @livewire('result-assistance')
+
 
             
 

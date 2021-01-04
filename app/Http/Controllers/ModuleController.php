@@ -15,6 +15,10 @@ class ModuleController extends Controller
 
     public function show(Module $module)
     {   
+        $this->authorize('statusPublished',$module);
+
+
+        
         $similars = Module::where('type_id',$module->type_id)
                            ->where('id', '!=', $module->id)
                            ->where('status',3)

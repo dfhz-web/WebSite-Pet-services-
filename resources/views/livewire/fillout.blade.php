@@ -1,4 +1,9 @@
 <div>
+
+    
+    <br>
+    <br>
+
     <form action="{{route('assistance.store')}}" method="post">
             
         @csrf
@@ -45,8 +50,15 @@
     @enderror
 
         <BR>
-            <button class="btn btn-primary" type="submit">Send</button>
-</form>
+            <button class="btn btn-primary" type="submit" >Send</button>
+  
+            <div>
+                <i class="fas fa-check-circle cursor-pointer" wire:click="completed" >I accepted terms and conditions of use my personal data</i>
+                <br>
+                <i class="far fa-check-circle">I accepted term and condition of use my personal data</i>
+        
+            </div>
+  </form>
 
 
 
