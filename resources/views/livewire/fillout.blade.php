@@ -1,5 +1,5 @@
 <div>
-    <form action="" method="post">
+    <form action="{{route('assistance.store')}}" method="post">
             
         @csrf
          <label>

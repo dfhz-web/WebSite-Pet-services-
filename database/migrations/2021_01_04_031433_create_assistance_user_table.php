@@ -16,10 +16,10 @@ class CreateAssistanceUserTable extends Migration
         Schema::create('assistance_user', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('assistance_id');
             $table->unsignedBigInteger('user_id');
 
-            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->foreign('assistance_id')->references('id')->on('assistances')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             

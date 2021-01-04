@@ -61,4 +61,12 @@ class Lesson extends Model
     return $this->morphMany('App\Models\Reaction','reactionable');
    }
 
+   ///relacion uno a muchos
+   public function assistance()
+   {
+        return $this->hasMany('App\Models\Assistance');
+
+   }
+}
+
 }

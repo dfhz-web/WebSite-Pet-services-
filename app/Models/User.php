@@ -127,6 +127,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Touch');
     }
 
+      ///relacion muchos a muchos inversa
+      public function assistances()
+      {
+          return $this->belongsToMany('App\Models\Assistance');
+      }
 
 
 

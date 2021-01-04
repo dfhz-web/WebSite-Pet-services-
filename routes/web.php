@@ -11,7 +11,7 @@ use App\Http\Livewire\ModuleStatus;
 use App\Models\Module;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\AboutusController;
-use App\Http\Controllers\DataController;
+use App\Http\Controllers\AssistanceController;
 
 
 Route::get('/',HomeController::class)->name('home');
@@ -57,6 +57,8 @@ Route::post('suggestions',[SuggestionController::class,'store'])->name('suggesti
 // Route::get('suggestions/create',[SuggestionController::class,'create'])->name('suggestions.create');
 
 Route::get('suggestions/{suggestion}',[SuggestionController::class,'show'])->name('suggestions.show');
+
+Route::post('assistance',[AssistanceController::class,'store'])->name('assistance.store');
 
 
 
