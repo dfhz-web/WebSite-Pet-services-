@@ -1,15 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('Modules', function () {
-    return "i am excited it is my first day as  an amazing worker";
-    
-});
+use App\Http\Livewire\CoordinationspeciallyModules;
+use App\Http\Livewire\CoordinationspeciallyCases;
 
 
+Route::get('Modules', CoordinationspeciallyModules::class)->name('Coordinatorm.modules.index');
 
-Route::get('Cordinating', function () {
-    return "Here i am going to coordinate all cases";
-    
-});
+
+
+Route::get('Cordinating', CoordinationspeciallyCases::class)->name('Coordinatorc.modules.index');
