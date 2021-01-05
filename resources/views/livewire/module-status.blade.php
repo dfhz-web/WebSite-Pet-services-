@@ -109,15 +109,23 @@
                 @endif
 
                 <br>
+               
+                {{-- <div class="mt-1 bg-gray-700 py-7 text-center text-7xl">
+                <h1 class="animate-pulse">Fill out</h1>
+                </div> --}}
+              
+                <br>
 
                 @if ($currently->fillout == 1)
                 <br>
-
-              
-
-            
-
-                <form action="{{route('assistance.store')}}" method="post">
+                 <div class="card">{{--ml-60 --}}
+                <section class="card-body bg-gray-700 text-center">{{-- mt-0 bg-gray-700 py-0 w-80 text-center text-7xl --}}
+                    <div class=""> {{-- mt-1 bg-gray-600 py-7 text-center text-7xl --}}
+                        <h1 class="">Fill out</h1>
+                        </div>
+ 
+                
+                 <form action="{{route('assistance.store',$this->currentUser->id)}}" method="post">
                         
                     @csrf
                      <label>
@@ -163,18 +171,42 @@
                 @enderror
             
                     <BR>
-                        <button class="btn btn-primary" type="submit" >Send</button>
+                        
               
-                        <div>
-                            {{-- <i class="fas fa-check-circle cursor-pointer" wire:click="complete" >I accepted terms and conditions of use my personal data</i>
-                            <br> --}}
-                            <i class="far fa-check-circle" wire:click="complete">I accepted term and condition of use my personal data</i>
+                       
+                
+
+
+              
+                   @if($this->rights == 0)
+                   
+
+                         <i class="far fa-square cursor-pointer"  wire:click='HerebyTerms'> I accepted terms and conditions of use my personal data</i><br>
+                         <br>
+                         <span class="btn btn-primary">Send</span>
+                         
+                       @else
+                      
+                         <i class="fas fa-check cursor-pointer"> I accepted term and condition of use my personal data</i><br><br>
+                         <button class="btn btn-primary" type="submit" >Send</button>
+                        
+                   @endif
+                   <br>
+                  
+
+
+
+                </form>
+            </section>
+                </div>
+                     
+              
+                      
                     
-                        </div>
-              </form>
+                @endif
             
                
-                @endif
+                
 
 
 
@@ -185,7 +217,7 @@
 
                 {{-- Here then i place if there is a form or answere of form --}}
 
-                 ////////////////////////////////////////////////////////////
+                 {{-- //////////////////////////////////////////////////////////// --}}
                  
 
                 
@@ -197,7 +229,7 @@
             
 
 
-                 ////////////////////////////////////////////////////////////
+                 {{-- //////////////////////////////////////////////////////////// --}}
  
                  <div class="flex items-center mt-4 cursor-pointer" wire:click="completed">
 

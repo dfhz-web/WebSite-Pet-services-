@@ -10,6 +10,8 @@ use App\Http\Controllers\DataController;
 use App\Http\Requests\StoreData;
 use App\Models\Assistance;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ModuleStatus extends Component
 {
@@ -18,22 +20,33 @@ class ModuleStatus extends Component
     public $currently;
     public $module;
     public $assistance;
+    public $currentUser;
+    public $rights=0;
     
     public function mount(Module $module, Assistance $assistance)
     {
         $this->assistance = $assistance;
         $this->module = $module;
+       
         foreach ($module->lessons as $lesson) {
             ///si da false se le asigana el valor de esa leccion
             if(!$lesson->complete)
             {
                 $this->currently = $lesson;
+               
                 break;
             }
         }
+
+         $this->currentUser =  Auth::user();
+      
         if (!$this->currently) {
             $this->currently = $module->lessons->last();
         }
+
+        
+        
+     
 
         $this->authorize('alreadyEnrolled',$module);
 
@@ -51,9 +64,22 @@ class ModuleStatus extends Component
 
 
     ///Metodos
+//    public function identifyUser()
+//    {
+//     // $this->currentUser = $this->currently->users('id');
+//     // $user =  $this->currentUser;
+//     $this->currentUser = $
+//    }
+
+
     public function lessonchange(Lesson $lesson)
     {
          $this->currently = $lesson;  
+    }
+
+    public function HerebyTerms()
+    {
+        $this->rights = 1;
     }
 
 
@@ -64,6 +90,7 @@ class ModuleStatus extends Component
         if($this->currently->complete){
            ///Delete data
               $this->currently->users()->detach(auth()->user()->id);
+              
             }
            else{
                ////add

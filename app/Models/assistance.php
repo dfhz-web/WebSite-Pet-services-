@@ -16,18 +16,26 @@ class Assistance extends Model
     const result_empty = 0;
     const result= 1;
 
+
+    //  users
     public function users()
     {
         return $this->belongsToMany('App\Models\User');
     }
+
+
+
+     ///lesson
       ///relacion uno a muchos inversa
-      public function lesson()
-      {
-          return $this->belongsTo('App\Models\Lesson');
-      }
+    //   public function lesson()
+    //   {
+    //       return $this->belongsTo('App\Models\Lesson');
+    //   }
     
 
-     ///fill out when assistance_id and user_id are there.
+
+    //  /get attribute
+    //  /fill out when assistance_id and user_id are there.
       public function getCompleteAttribute()
     {
        return  $this->users->contains(auth()->user()->id);

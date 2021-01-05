@@ -17,12 +17,12 @@ class CreateAssistancesTable extends Migration
             $table->id();
 
             $table->text('symptoms');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->text('address');
 
-            $table->unsignedBigInteger('lesson_id');
-            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            // $table->unsignedBigInteger('lesson_id');
+            // $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
 
 
             $table->timestamps();

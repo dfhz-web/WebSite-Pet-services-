@@ -59,7 +59,7 @@ Route::post('suggestions',[SuggestionController::class,'store'])->name('suggesti
 Route::get('suggestions/{suggestion}',[SuggestionController::class,'show'])->name('suggestions.show');
 
 
-Route::post('assistance',[AssistanceController::class,'store'])->name('assistance.store');
+Route::post('assistance/{user}',[AssistanceController::class,'store'])->name('assistance.store');
 
 
 
