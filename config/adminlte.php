@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Healthylife</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/administrator.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -188,7 +188,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
 
     'logout_url' => 'logout',
 
@@ -241,13 +241,24 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+       
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'Roles',
+            // 'url'         => 'administrator/role',
+            'route'         => 'administrator.roles.index',
+            'icon'        => 'fas fa-fw fa-users-cog',
+            // 'label'       => 4,
+            // 'label_color' => 'success',
         ],
+
+        [
+            'text'        => 'Home administrator',
+            'route'         => 'administrator.home',
+            'icon'        => 'fas fa-fw fa-igloo',
+            // 'label'       => 4,
+            // 'label_color' => 'success',
+        ],
+        
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
