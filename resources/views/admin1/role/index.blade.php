@@ -48,7 +48,7 @@
                     <td>{{$role->id}}</td>
                     <td>{{$role->name}}</td>
                     <td>
-                        <a class="btn btn-warning" href="{{route('administration.roles.edit',$role)}}">
+                        <a class="btn btn-warning" href="{{route('administrator.roles.edit',$role)}}">
                         Edit
                         </a>
                     </td>

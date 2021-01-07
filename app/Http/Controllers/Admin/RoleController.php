@@ -20,7 +20,7 @@ class RoleController extends Controller
     public function index()
     {
        $roles = Role::all();
-       return view('administrator.role.index',compact('roles'));
+       return view('admin1.role.index',compact('roles'));
     }
 
     /**
@@ -32,7 +32,7 @@ class RoleController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('administrator.role.create', compact('permissions'));
+        return view('admin1.role.create', compact('permissions'));
     }
 
     /**
@@ -56,8 +56,11 @@ class RoleController extends Controller
 
         $role->permissions()->attach($request->permissions);
 
+        $roles = Role::all();
 
-        return redirect()->route('administrator.roles.index');
+        // return redirect()->route('admin1.role.index');
+        return view('admin1.role.index',compact('roles'));
+       
     }
 
     /**
@@ -68,7 +71,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        return view('administrator.role.show',compact('role'));
+        return view('admin1.role.show',compact('role'));
     }
 
     /**
@@ -79,7 +82,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        return view('administrator.role.edit',compact('role'));
+        return view('admin1.role.edit',compact('role'));
     }
 
     /**
