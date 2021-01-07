@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Routing\RedirectController;
+use Illuminate\Support\Facades\Redirect;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 
 class RoleController extends Controller
 {
@@ -16,7 +19,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-       return view('administrator.role.index');
+       $roles = Role::all();
+       return view('administrator.role.index',compact('roles'));
     }
 
     /**
@@ -26,7 +30,9 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('administrator.role.create');
+        $permissions = Permission::all();
+
+        return view('administrator.role.create', compact('permissions'));
     }
 
     /**
@@ -37,7 +43,21 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+           'name'  => 'required',
+           'permissions' => 'required'
+
+        ]);
+
+        $role = Role::create([
+            'name' => $request->name
+        ]);
+
+        $role->permissions()->attach($request->permissions);
+
+
+        return redirect()->route('administrator.roles.index');
     }
 
     /**
