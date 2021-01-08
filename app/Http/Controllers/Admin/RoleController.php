@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Message;
+use App\Models\Talk;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RedirectController;
 use Illuminate\Support\Facades\Redirect;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+
 
 
 class RoleController extends Controller
@@ -58,9 +61,12 @@ class RoleController extends Controller
 
         $roles = Role::all();
 
-        // return redirect()->route('admin1.role.index');
-        return view('admin1.role.index',compact('roles'));
+  
+
+ 
        
+        // return redirect()->route('admin1.role.index');
+        return view('admin1.role.index',compact('roles','role'));
     }
 
     /**
