@@ -87,8 +87,10 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Role $role)
+    
     {
-        return view('admin1.role.edit',compact('role'));
+        $permissions = Permission::all();
+        return view('admin1.role.edit',compact('role','permissions'));
     }
 
     /**
@@ -100,7 +102,17 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $request->validate([
+            'name'  => 'required',
+            'permissions' => 'required'
+ 
+         ]);
+         ///delete updating
+         $role->permissions()->sync($request->permissions);
+
+         $roles = Role::all();
+
+         return view('admin1.role.index',compact('role','roles'));
     }
 
     /**
@@ -111,6 +123,9 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        $roles = Role::all();
+
+         return view('admin1.role.index',compact('role','roles'));
     }
 }
