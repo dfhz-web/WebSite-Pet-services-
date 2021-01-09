@@ -247,6 +247,7 @@ return [
             // 'url'         => 'administrator/role',
             'route'         => 'administrator.roles.index',
             'icon'        => 'fas fa-fw fa-users-cog',
+            'active'      =>['administrator/role*']
             // 'label'       => 4,
             // 'label_color' => 'success',
         ],

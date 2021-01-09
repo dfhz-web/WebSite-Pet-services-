@@ -107,6 +107,12 @@ class RoleController extends Controller
             'permissions' => 'required'
  
          ]);
+        
+         $role->update([
+            'name'  => $request->name
+            
+         ]);
+
          ///delete updating
          $role->permissions()->sync($request->permissions);
 
