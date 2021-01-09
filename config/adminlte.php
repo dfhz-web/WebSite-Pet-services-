@@ -241,6 +241,16 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+
+        [
+            'text'        => 'Users-list',
+            'route'         => 'administrator.users.index',
+            'icon'        => 'fas fa-fw fa-user-plus',
+            'active'      =>['administrator/users*']
+  
+        ],
+
+
        
         [
             'text'        => 'Roles',
@@ -445,5 +455,5 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/#93-livewire
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
