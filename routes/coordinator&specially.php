@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Livewire\Coordinator;
+use App\Http\Livewire\SpeciallyUpdate;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\CoordinationspeciallyModules;
-use App\Http\Livewire\CoordinationspeciallyCases;
-
-
-Route::get('Modules', CoordinationspeciallyModules::class)->name('Coordinatorm.modules.index');
 
 
 
-Route::get('Cordinating', CoordinationspeciallyCases::class)->name('Coordinatorc.modules.index');
+Route::get('Modules', SpeciallyUpdate::class)->name('SpeciallyUpdate.index');
+
+
+
+Route::get('Cordinating',Coordinator::class)->name('Coordinator.index');
