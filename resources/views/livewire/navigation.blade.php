@@ -222,11 +222,36 @@
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           -->
-          <div x-show="open" x-on:click.away="open = false"  class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+            <div x-show="open" x-on:click.away="open = false"  class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
             <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
               Your Profile
             </a>
-    
+            {{-- .... --}}
+
+      
+             @can(['Admin-dashboard'])
+              <a href="{{route('administrator.home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+               Administrator
+              </a>
+            @endcan
+
+
+             @can(['Create modules','Read modules','Update modules','Delete modules'])
+              <a href="{{route('speciallyUpdate.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+               Specially Update
+              </a>
+             @endcan
+
+
+             @can(['Coordinate modules'])
+               <a href="{{route('coordinator.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                 Coordinator
+               </a>
+             @endcan 
+
+             {{-- .... --}}
+
+            
 
 
             <form method="POST" action="{{ route('logout') }}">

@@ -10,7 +10,15 @@
         <div class="card-body">
             <h1 class="h5">Name: </h1>
             <p class="form-control">{{$user->name}}</p>
-            <br>
+       
+            @if (session('info'))
+            <div class="alert alert-success" role="alert">
+                <strong>{{session('info')}}</strong>
+            </div>
+               
+            
+            @endif
+            
             <h1 class="h5">Roles assignmented</h1>
 
             {!! Form::model($user, ['route' => ['administrator.users.update',$user], 'method' => 'put']) !!}
@@ -22,6 +30,7 @@
                     
                 @endforeach
                 <br>
+               
                 {!! Form::submit('Assignment role', ['class' =>'btn btn-primary mt-1']) !!}
             
             

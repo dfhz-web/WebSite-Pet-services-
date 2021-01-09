@@ -29,9 +29,19 @@ class DatabaseSeeder extends Seeder
        Storage::deleteDirectory('modules');
        Storage::makeDirectory('modules');
 
+       $this->call(PermissionSeeder::class);
+       $this->call(RoleSeeder::class);
+
+
        $this->call(UserSeeder::class);
+       
        Category::factory(4)->create();
        Tag::factory(8)->create();
+
+       
+
+
+
        $this->call(PostSeeder::class);
       
        $this->call(KindSeeder::class);
@@ -46,6 +56,7 @@ class DatabaseSeeder extends Seeder
 
 
        $this->call(SuggestionSeeder::class);
+
 
 }
 }

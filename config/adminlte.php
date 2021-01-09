@@ -246,7 +246,8 @@ return [
             'text'        => 'Users-list',
             'route'         => 'administrator.users.index',
             'icon'        => 'fas fa-fw fa-user-plus',
-            'active'      =>['administrator/users*']
+            'active'      =>['administrator/users*'],
+            'can'         => 'read-users'
   
         ],
 
@@ -257,17 +258,18 @@ return [
             // 'url'         => 'administrator/role',
             'route'         => 'administrator.roles.index',
             'icon'        => 'fas fa-fw fa-users-cog',
-            'active'      =>['administrator/role*']
+            'active'      =>['administrator/role*'],
+            'can'         => 'list-role',
             // 'label'       => 4,
             // 'label_color' => 'success',
         ],
 
         [
             'text'        => 'Home administrator',
-            'route'         => 'administrator.home',
+            'route'       => 'administrator.home',
             'icon'        => 'fas fa-fw fa-igloo',
-            // 'label'       => 4,
-            // 'label_color' => 'success',
+            'can'         => 'Admin-dashboard',
+        
         ],
         
         ['header' => 'account_settings'],

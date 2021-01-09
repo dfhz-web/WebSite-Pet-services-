@@ -9,6 +9,14 @@ use Spatie\Permission\Models\Role;
 
 class ManagementuserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:read-users')->only('index');
+        $this->middleware('can:Edit-users')->only('edit','update');
+   
+        
+    }
     /**
      * Display a listing of the resource.
      *
