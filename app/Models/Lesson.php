@@ -11,6 +11,12 @@ class Lesson extends Model
     protected $guarded = ['id'];
     use HasFactory;
 
+    const fill_out_empty = 0;
+    const fill_out = 1;
+
+    const result_empty = 0;
+    const result = 1;
+
     public function getCompleteAttribute()
     {
        return  $this->users->contains(auth()->user()->id);

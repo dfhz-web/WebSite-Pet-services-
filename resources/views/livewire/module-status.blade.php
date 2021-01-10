@@ -79,7 +79,7 @@
 
 
                                             <a class="cursor-pointer" wire:click="lessonchange({{$lesson}})">
-                                                {{$lesson->name}} 
+                                                {{$lesson->id}} 
                                                 {{-- @if($lesson->complete)
                                                 (completed)
                                             @endif</a> --}}

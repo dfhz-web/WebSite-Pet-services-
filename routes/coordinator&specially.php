@@ -10,4 +10,4 @@ Route::get('employed', SpeciallyUpdate::class)->middleware('can:Create modules',
 
 
 
-Route::get('Cordinating',Coordinator::class)->middleware('can:Read modules','can:Update modules','can:Coordinate assistances')->name('coordinator.index');
+Route::get('coordinations',Coordinator::class)->middleware('can:Read modules','can:Update modules','can:Coordinate modules')->name('coordinator.index');

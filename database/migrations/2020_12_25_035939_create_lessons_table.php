@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Assistance;
+use App\Models\Lesson;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,8 +21,8 @@ class CreateLessonsTable extends Migration
             $table->string('url');
             $table->string('iframe');
 
-            $table->enum('fillout',[Assistance::fill_out_empty, Assistance::fill_out])->default(Assistance::fill_out_empty);
-            $table->enum('answere',[Assistance::result_empty, Assistance::result])->default(Assistance::result_empty);
+            $table->enum('fillout',[Lesson::fill_out_empty, Lesson::fill_out])->default(Lesson::fill_out_empty);
+            $table->enum('answere',[Lesson::result_empty, Lesson::result])->default(Lesson::result_empty);
 
             $table->unsignedBigInteger('platform_id')->nullable();
             $table->unsignedBigInteger('section_id');

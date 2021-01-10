@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Assistance extends Model
 {
     use HasFactory;
-    protected $guarded = [''];
+    protected $guarded = ['status'];
 
-    const fill_out_empty = 0;
-    const fill_out = 1;
-
-    const result_empty = 0;
-    const result= 1;
+    const Coordinate = 0;
+    const Coordinated= 1;
+    
 
 
     //  users

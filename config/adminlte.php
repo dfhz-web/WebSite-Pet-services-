@@ -269,6 +269,7 @@ return [
             'route'       => 'administrator.home',
             'icon'        => 'fas fa-fw fa-igloo',
             'can'         => 'Admin-dashboard',
+            
         
         ],
         

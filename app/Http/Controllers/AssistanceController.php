@@ -11,6 +11,7 @@ class AssistanceController extends Controller
     {
         $assistances = Assistance::create($request->all());
         $assistances->users()->attach(auth()->user()->id);
+   
         return 'well done';
         // return view('suggestion.done',compact('assistances'));
     }
