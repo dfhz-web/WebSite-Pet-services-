@@ -7,7 +7,7 @@ use App\Http\Controllers\SpeciallyUpdate\ModuleController;
 use App\Http\Controllers\SpeciallyUpdate\CoordinateController;
 use App\Http\Controllers\SpeciallyUpdate\ExtraCoordinateController;
 
-// Route::get('employed', SpeciallyUpdate::class)->middleware('can:Create modules','can:Read modules','can:Update modules','can:Delete modules')->name('speciallyUpdate.index');
+// Route::get('emplosyed', SpeciallyUpdate::class)->middleware('can:Create modules','can:Read modules','can:Update modules','can:Delete modules')->name('speciallyUpdate.index');
 Route::resource('speciallyupdate', ModuleController::class)->names('updates');
 
 
