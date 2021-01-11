@@ -18,7 +18,7 @@
             @empty 
 
             <li class="hover:bg-green-500 cursor-pointer text-sm px-5 leading-8">
-               any results found
+               any results found..
             </li>
 
  

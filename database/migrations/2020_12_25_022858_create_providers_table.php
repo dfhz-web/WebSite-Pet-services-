@@ -18,15 +18,29 @@ class CreateProvidersTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->text('description');
+            $table->text('kind');
+            $table->text('address');
+
         
             $table->string('email');
             $table->string('phone');
             $table->enum('status',[Provider::unknown,Provider::known,Provider::approval])->default(Provider::unknown);
             $table->float('price');
-            $table->time('open');
-            $table->time('break');
-            $table->time('close');
+
+
+
+            $table->time('open_week');
+            $table->time('break_week');
+            $table->time('close_week');
+
+
+          
+            $table->time('open_weekend');
+            $table->time('break_weekend');
+            $table->time('close_weekend');
+
+            $table->text('note');
+
 
 
 

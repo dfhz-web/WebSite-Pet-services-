@@ -18,8 +18,8 @@ class Provider extends Model
 
       ///relacion muchos a muchos inversa
 
-   public function user()
-   {
+     public function user()
+     {
        return $this->belongsToMany('App\Models\User');
-   }
+     }
 }
