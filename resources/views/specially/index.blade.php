@@ -2,7 +2,7 @@
 <x-app-layout>
 <div class="container">
 
-    <div class="grid grid-cols-2 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 py-8">
     <div class="text-center">
     <x-table>
     

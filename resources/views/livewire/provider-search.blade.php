@@ -8,27 +8,66 @@
                 </div>
     
     
-                @if ($providers->count())
-               @foreach ($providers as $provider)
+              @if ($providers->count())
+               
+               
+               <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Kind
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Address
+                    </th>
+                    <th scope="col" class="relative px-6 py-3">
+                      <span class="sr-only">Go</span>
+                    </th>
+                  </tr>
+                </thead>
+
+                 <tbody class="bg-white divide-y divide-gray-200">
+
+                  @foreach ($providers as $provider)
                    
-               
-               
-                <ul>
-                    <li>{{$provider->name}}</li>
-                    <li>{{$provider->address}}</li>
-                </ul>
 
-                @endforeach
+                  <tr>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      
+                      <div class="text-sm text-gray-500 flex items-center">
+                        {{$provider->kind}}
+                      </div>
+                    <td>
+
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      
+                        <div class="text-sm text-gray-500 flex items-center">
+                          {{$provider->address}}
+                        </div>
+                    <td>
+
+                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Goes</a>
+                      </td>
+               
+                    </tr>
+                
+
+                
+
+              </tbody>
+              @endforeach
+
                     
-               
-            
-    
-
-
+                
               <div class="px-6 py-4">
                 {{$providers->links()}}
     
               </div>
+            
+    
+
+
     
 
 
