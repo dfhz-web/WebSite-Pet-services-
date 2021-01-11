@@ -237,19 +237,19 @@
 
 
              @can(['Create modules','Read modules','Update modules','Delete modules'])
-              <a href="{{route('modules.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+              <a href="{{route('updates.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                Specially Update
               </a>
              @endcan
 
 
              @can(['Coordinate modules'])
-               <a href="{{route('coordinations.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+               <a href="{{route('coordinate.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                  Coordinator
                </a>
              @endcan 
 
-             {{-- .... --}}
+             {{-- ....s --}}
 
             
 

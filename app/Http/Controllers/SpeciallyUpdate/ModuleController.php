@@ -15,7 +15,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        //
+        return view('specially.modules.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class ModuleController extends Controller
      */
     public function create()
     {
-        //
+        return view('specially.modules.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class ModuleController extends Controller
      */
     public function show(Module $module)
     {
-        //
+        return view('specially.modules.create',compact('module'));
     }
 
     /**
@@ -58,7 +58,7 @@ class ModuleController extends Controller
      */
     public function edit(Module $module)
     {
-        //
+        return view('specially.modules.edit',compact('module'));
     }
 
     /**

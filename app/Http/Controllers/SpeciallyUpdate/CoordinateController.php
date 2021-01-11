@@ -6,18 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Assistance;
 use App\Models\Provider;
+use App\Http\Livewire\Coordinator;
 
 class CoordinateController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of wthe resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminwate\Http\Response
      */
+    
     public function index(Assistance $assistance)
     {
-        $providerss = Provider::all();
-        return view('specially.index',compact('providerss'));
+       
+        return view('specially.coordinations.index',compact('assistance'));
     }
 
     /**
@@ -27,7 +29,7 @@ class CoordinateController extends Controller
      */
     public function create()
     {
-        //
+        return view('specially.coordinations.create');
     }
 
     /**
@@ -44,7 +46,7 @@ class CoordinateController extends Controller
         // $providerss = Provider::all()s;
 
    
-        return view('specially.index',compact('providers'));
+        return view('specially.coordinations.index',compact('providers'));
     }
 
     /**
@@ -53,9 +55,11 @@ class CoordinateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Assistance $assistance, Provider $provider)
+    public function show(Assistance $assistance)
     {
-        //
+        
+    
+        return view('specially.coordinations.show',compact('assistance'));
     }
 
     /**
@@ -66,7 +70,7 @@ class CoordinateController extends Controller
      */
     public function edit(Assistance $assistance, Provider $provider)
     {
-        //
+        return view('specially.coordinations.edit',compact('provider'));
     }
 
     /**
@@ -90,5 +94,13 @@ class CoordinateController extends Controller
     public function destroy(Assistance $assistance, Provider $provider)
     {
         //
+    }
+
+    public function index2()
+    {
+        $assistances = Assistance::all();
+
+        
+        return view('specially.coordinations.index2',compact('assistances'));
     }
 }
