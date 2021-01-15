@@ -9,7 +9,7 @@ use App\Models\Module;
 class ModuleController extends Controller
 {
     /**
-     * Display a listing sof the resource.
+     * Display a listing ssof the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -70,7 +70,7 @@ class ModuleController extends Controller
      */
     public function update(Request $request, Module $module)
     {
-        //
+        return "hi";
     }
 
     /**

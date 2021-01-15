@@ -1,3 +1,3 @@
 <x-app-layout>
-    @livewire('specially-update')
+   @livewire('specially.module-index')
 </x-app-layout>

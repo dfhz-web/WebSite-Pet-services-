@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\specially;
 
 use Livewire\Component;
 
@@ -8,7 +8,7 @@ use App\Models\Module;
 
 use Livewire\WithPagination;
 
-class SpeciallyUpdate extends Component
+class ModuleIndex extends Component
 {
     use WithPagination;
     public $search;
@@ -19,7 +19,7 @@ class SpeciallyUpdate extends Component
                           ->where('user_id', auth()->user()->id)
                           ->paginate(8);
 
-        return view('livewire.specially-update',compact('modules'));
+        return view('livewire.specially.modules-index',compact('modules'));
     }
     public function search_all_pages()
     {
