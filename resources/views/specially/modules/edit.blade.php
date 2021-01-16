@@ -24,14 +24,18 @@
               <h1 class="text-2xl font-bold">Module's information</h1>
              
               <hr class="mt-3 mb-4">
-
+             
+               {{-- {!! Form::model($module, ['route' => ['updates.update',$module],'method' => 'put']) !!} --}}
+             
                {!! Form::model($module, ['route' => ['updates.update',$module],'method' => 'put']) !!}
-                   <div class="mb-3">
+                 
+                <div class="mb-3">
                      {!! Form::label('title', "Title's course") !!}
                      {!! Form::text('title', null, ['class' => 'form-input block w-full mt-1']) !!}
 
+                </div>
 
-                   </div>
+
                
                {!! Form::close() !!}
             
