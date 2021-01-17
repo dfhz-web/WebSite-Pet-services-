@@ -18,7 +18,7 @@ class Provider extends Model
 
       ///relacion muchos a muchos inversa
 
-     public function user()
+     public function users()
      {
        return $this->belongsToMany('App\Models\User');
      }

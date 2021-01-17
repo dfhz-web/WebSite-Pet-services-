@@ -35,6 +35,26 @@
 
                 </div>
 
+                <div class="mb-3">
+                  {!! Form::label('slug', "slug' course") !!}
+                  {!! Form::text('slug', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+                </div>
+
+                <div class="mb-3">
+                  {!! Form::label('subtitle', "Subtitle's course") !!}
+                  {!! Form::text('subtitle', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+                </div>
+
+                <div class="mb-3">
+                  {!! Form::label('description', "Description's course") !!}
+                  {!! Form::textarea('description', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+                </div>
+
+                
+
 
                
                {!! Form::close() !!}
@@ -46,4 +66,29 @@
       </div>
    </div>
   </div>
+
+  <x-slot name="Helperwithslugwithname">
+     <script>
+       //Slug automático
+        document.getElementById("title").addEventListener('keyup', slugChange);
+
+          function slugChange(){
+              
+              title = document.getElementById("title").value;
+              document.getElementById("slug").value = slug(title);
+
+          }
+
+            function slug (str) {
+                var $slug = '';
+                var trimmed = str.trim(str);
+                $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
+                replace(/-+/g, '-').
+                replace(/^-|-$/g, '');
+                return $slug.toLowerCase();
+            }
+
+        
+     </script>
+  </x-slot>
 </x-app-layout>

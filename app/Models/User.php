@@ -103,7 +103,7 @@ class User extends Authenticatable
     }
 
     ///relacion muchos a muchos
-   public function Provider()
+   public function providers()
    {
        return $this->belongsToMany('App\Models\Provider');
    }

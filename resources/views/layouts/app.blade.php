@@ -44,5 +44,12 @@
         @stack('modals')
 
         @livewireScripts
+        
+        @isset($Helperwithslugwithname)
+        
+           {{$Helperwithslugwithname}}
+            
+        @endisset
+
     </body>
 </html>
