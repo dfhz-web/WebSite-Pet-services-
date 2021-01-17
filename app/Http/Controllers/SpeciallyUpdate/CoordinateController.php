@@ -55,11 +55,11 @@ class CoordinateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Provider $provider)
+    public function show(Assistance $assistance)
     {
         
     
-        return view('specially.coordinations.show',compact('provider'));
+        return view('specially.coordinations.show',compact('assistance'));
     }
 
     /**

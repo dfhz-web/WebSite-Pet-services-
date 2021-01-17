@@ -16,7 +16,7 @@ class ProviderSearch extends Component
     {
         $providers = Provider::where('name','LIKE','%'. $this->search .'%')
                               ->orWhere('kind','LIKE','%'. $this->search .'%')
-                              ->paginate(8);
+                              ->paginate(6);
 
         return view('livewire.provider-search',compact('providers'));
     }

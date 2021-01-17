@@ -12,6 +12,7 @@ class Coordinator extends Component
 {
 
     public $search;
+
     public function render()
     {
         // $modules = Module::where('user_id', auth()->user()->id)->get();
@@ -29,4 +30,5 @@ class Coordinator extends Component
     // {
     //     $this->reset('page');
     // }
+
 }

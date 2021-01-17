@@ -3,7 +3,7 @@
         <!-- This example requires Tailwind CSS v2.0+ -->
     
         <x-table>
-                <div class="px-7 py-2">
+                <div class="px-7 py-1">
                      <input wire:keydown="search_all_pages" wire:model="search" class="form-input w-full shadow-sm" placeholder="Here you will find a providers!">
                 </div>
     

@@ -35,7 +35,7 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
 
-               @foreach ($assistances as $assistance)
+            @foreach ($assistances as $assistance)
               <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
@@ -45,7 +45,8 @@
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900">
                        {{$assistance->users}}
-                       {{-- Daniel Felipe Herrera Zambrano --}}
+                      
+                  
                       </div>
                       <div class="text-sm text-gray-500">
                         {{$assistance->email}}
@@ -84,13 +85,13 @@
                     </span>
                   </td>
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <a href="{{route('coordinations.index',$assistance)}}" class="text-indigo-600 hover:text-indigo-900">Go</a>
+                  <a href="{{route('coordinations.show',$assistance)}}" class="text-indigo-600 hover:text-indigo-900">Go</a>
                 </td>
               </tr>
 
               @endforeach
   
-              <!-- More rows... -->
+              <!-- More ross... -->
             </tbody>
 
 
