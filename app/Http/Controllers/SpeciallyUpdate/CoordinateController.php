@@ -68,9 +68,22 @@ class CoordinateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Assistance $assistance, Provider $provider)
+
+    public function checkProvider(Provider $provider)
+    {
+        return view('specially.coordinations.check',compact('provider'));
+    }
+
+    public function editProvider(Provider $provider)
     {
         return view('specially.coordinations.edit',compact('provider'));
+
+
+    }
+
+
+    public function edit()
+    {
     }
 
     /**

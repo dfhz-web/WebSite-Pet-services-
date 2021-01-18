@@ -14,6 +14,9 @@ Route::resource('modules', ModuleController::class)->names('updates');
 
 
 Route::resource('assistances', CoordinateController::class)->names('coordinations');
+Route::get('provider/{provider}/checkout',[CoordinateController::class, 'checkProvider'])->name('providers.edit');
+Route::get('provider/{provider}/edit',[CoordinateController::class, 'editProvider'])->name('providers.edit');
+
 
 
  

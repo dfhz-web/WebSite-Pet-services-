@@ -120,7 +120,8 @@
     
         <div>
           <x-table>
-            <div class="container pb-1 mt-10">
+            <div class="container pb-1 udm
+            t-10">
 
             <x-table>
 
