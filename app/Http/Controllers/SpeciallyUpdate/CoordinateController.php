@@ -93,6 +93,15 @@ class CoordinateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    public function updateProvider(Provider $provider)
+    {
+
+      return "Well Done";
+    }
+
+
     public function update(Request $request, Assistance $assistance, Provider $provider)
     {
         //

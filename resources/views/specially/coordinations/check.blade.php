@@ -7,28 +7,33 @@
         <div class="grid grid-cols-3 gap-4">
 
           <div class="">
-              <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Provider 
-              </h3>
-              <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                That you have chosen for this case!...
-              </p>
-
+            <a href="{{route('coordinations.show',$provider)}}"><i class="fas fa-arrow-left">Back</i></a>
+            
+              
            </div>
 
            <div>
+          
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+              Provider 
+           </h3>
+           <p class="mt-1 max-w-2xl text-sm text-gray-500">
+             That you have chosen for this case!...
+           </p>
+
 
            
             
            </div>
 
            <div>
-            <button   type="button"  class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline">
-              This match!
+           
+            <button type="button"  class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline">
+            This match!
             </button>
 
             <button type="button" class="border border-yellow-500 text-yellow-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-yellow-600 focus:outline-none focus:shadow-outline">
-              Update
+              <a href="{{route('providers.editProvider',$provider)}}">Update</a>
              </button>
            </div>
 
