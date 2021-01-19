@@ -40,6 +40,24 @@ class CoordinateController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate ([
+            'name' => 'required',
+            'kind' => 'required',
+            'address' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'price' => 'required',
+            'open_week' => 'required',
+            'break_week' => 'required',
+            'close_week' => 'required',
+            'open_weekend' => 'required',
+            'break_weekend' => 'required',
+            'close_weekend' => 'required',
+            'note' => 'required',
+
+            
+          
+        ]);
 
         return $request->all();
         // $providers = Provider::create($request->all());

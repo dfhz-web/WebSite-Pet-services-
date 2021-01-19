@@ -41,8 +41,25 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
-       $request->validate 
-        return $request->all();
+        $request->validate ([
+            'kind_id' => 'required',
+            'price_id' => 'required',
+            'title' => 'required',
+            'slug' => 'required|unique:modules',
+            'subtitle' => 'required',
+            'description' => 'required',
+          
+        ]);
+
+        $modules = Module::create($request->all());
+
+        
+        // $kinds = Kind::pluck('name', 'id');
+        // $prices = Price::pluck('name', 'id');
+       
+        // return view('specially.modules.edit',compact('modules','kinds','prices'));
+
+        return view('specially.modules.index');
        
     }
 

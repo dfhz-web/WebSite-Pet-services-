@@ -1,5 +1,7 @@
 <x-app-layout>
+
     {!! Form::open(['route' => 'updates.store','files'=> true]) !!}
+    {!! Form::hidden('user_id', auth()->user()->id) !!}
     <div class="container py-10">
         <div class="card">
             <div class="card-body">
@@ -33,14 +35,19 @@
                     {!! Form::label('title', "Title's course") !!}
                     {!! Form::text('title', null, ['class' => 'form-input block w-full mt-1']) !!}
 
-                </div>
+                
+
+                @error('title')
+                    <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+                @enderror
+              </div>
 
 
                <h1 class=" font-bold mt-5 mb-5">Image of the module</h1>
                <div class="grid grid-cols-2 gap-5">
                  <figure>
 
-                    @isset($module)
+                    @isset($module->picture)
                     
                     <div class="flex items-center">
                         <div class="flex-shrink-0 h-30 w-full">
@@ -74,13 +81,22 @@
 
                <div class="mb-3">
                  {!! Form::label('slug', "slug' course") !!}
-                 {!! Form::text('slug', null, ['class' => 'form-input block w-full mt-1']) !!}
+                 {!! Form::text('slug', null, ['readonly' => 'readonly' ,'class' => 'form-input block w-full mt-1']) !!}
 
-               </div>
+              
+
+               @error('slug')
+               <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+               @enderror
+              </div>
 
                <div class="mb-3">
                  {!! Form::label('subtitle', "Subtitle's course") !!}
                  {!! Form::text('subtitle', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+                 @error('subtitle')
+                 <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+                 @enderror
 
                </div>
 
@@ -88,10 +104,14 @@
                  {!! Form::label('description', "Description's course") !!}
                  {!! Form::textarea('description', null, ['class' => 'form-input block w-full mt-1']) !!}
 
+                 @error('description')
+               <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+               @enderror
+
                </div>
 
                <div class="flex justify-center">
-                   {!! Form::submit('Create', ['class' => 'border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline']) !!}
+                   {!! Form::submit('Create', ['class' => ' cursor-pointer border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline']) !!}
                </div>
 
             
