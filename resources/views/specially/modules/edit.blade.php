@@ -1,5 +1,5 @@
 <x-app-layout>
-  {!! Form::model($module, ['route' => ['updates.update',$module],'method' => 'put']) !!}
+  {!! Form::model($module, ['route' => ['updates.update',$module],'method' => 'put','files' => true]) !!}
   <div>
      <div class="container py-4 grid grid-cols-6">
          <aside class="col-start-2 col-span-4 text-center">
@@ -58,7 +58,7 @@
 
                     <div class="flex items-center">
                       <div class="flex-shrink-0 h-30 w-full">
-                          <img class="h-20 w-50 rounded-full bg-cover " src={{Storage::url($module->picture->url)}} alt="">
+                          <img id="picture" class="h-20 w-50 rounded-full bg-cover " src={{Storage::url($module->picture->url)}} alt="">
                       </div>
                     </div>
               
@@ -66,7 +66,8 @@
 
                   </figure>
                   <div class="">
-                    {!! Form::file('file', ['class' => 'form-input w-full']) !!}
+                   
+                    {!! Form::file('file', ['class' => 'form-input w-full','id'=>'file']) !!}
 
 
                   </div>
@@ -93,6 +94,12 @@
 
                 </div>
 
+                <div class="flex justify-center">
+                     {!! Form::submit('update', ['class'=> 'border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline']) !!} 
+
+
+                </div>
+
                
 
                 
@@ -110,27 +117,7 @@
   </div>
 
   <x-slot name="Helperwithslugwithname">
-     <script>
-       //Slug automático
-        document.getElementById("title").addEventListener('keyup', slugChange);
-
-          function slugChange(){
-              
-              title = document.getElementById("title").value;
-              document.getElementById("slug").value = slug(title);
-
-          }
-
-            function slug (str) {
-                var $slug = '';
-                var trimmed = str.trim(str);
-                $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
-                replace(/-+/g, '-').
-                replace(/^-|-$/g, '');
-                return $slug.toLowerCase();
-            }
-
-        
+     <script src="{{asset('js/specially/shape.js')}}">  
      </script>
   </x-slot>
 </x-app-layout>

@@ -139,6 +139,13 @@
                     {!! Form::textarea('note', null, ['class' => 'form-input block w-full mt-1']) !!}
 
                   </div>
+
+
+                  <div class="flex justify-center">
+                    {!! Form::submit('Update', ['class'=> 'border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline']) !!} 
+
+
+                  </div>
   
   
   

@@ -27,7 +27,10 @@ class ModuleController extends Controller
      */
     public function create()
     {
-        return view('specially.modules.create');
+        $kinds = Kind::pluck('name', 'id');
+        $prices = Price::pluck('name', 'id');
+        return view('specially.modules.create',compact('kinds','prices'));
+
     }
 
     /**
@@ -38,7 +41,9 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $request->validate 
+        return $request->all();
+       
     }
 
     /**

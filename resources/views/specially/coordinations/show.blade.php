@@ -3,107 +3,100 @@
  
         <div class="grid grid-cols-1 lg:grid-cols-2 py-8">
         <div class="text-center">
+
+         {{-- lkdsjfklsda --}}
         <x-table>
+      {!! Form::open(['route' => 'coordinations.store']) !!}
         
-        <form action="{{route('coordinations.store')}}" method="POST">
+         <div class="mb-3">
+            {!! Form::label('name', " Name:") !!}
+            {!! Form::text('name', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('kind', " kind:") !!}
+            {!! Form::text('kind', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('address', "Address:") !!}
+            {!! Form::text('address', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('email', " Email:") !!}
+            {!! Form::text('email', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('phone', "Cellphone:") !!}
+            {!! Form::text('phone', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('price', "Price First Consultation:") !!}
+            {!! Form::text('price', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         
+         <div class="mb-3">
+            {!! Form::label('open_week', "Open_week:") !!}
+            {!! Form::text('open_week', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('break_week', "Break_week:") !!}
+            {!! Form::text('break_week', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('close_week', "Close_week:") !!}
+            {!! Form::text('close_week', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('open_weekend', "Open_weekend:") !!}
+            {!! Form::text('open_weekend', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         
+         <div class="mb-3">
+            {!! Form::label('break_weekend', "Break_weekend:") !!}
+            {!! Form::text('break_weekend', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('close_weekend', " Close_weekend:") !!}
+            {!! Form::text('close_weekend', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="mb-3">
+            {!! Form::label('note', " Note:") !!}
+            {!! Form::textarea('note', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+         </div>
+
+         <div class="flex justify-center">
+            {!! Form::submit('Create', ['class' => 'border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline']) !!}
+        </div>
                 
-            @csrf
-            <label>
-                 Name:
-                  <br>
-                  <input type="text" name="name">
-            </label>
-           <br>
-           <label>
-             <br>
-              kind:
-             <br>
-             <input type="text" name="kind">
-           </label>
+      
+         
+    
+ 
            
-    
-            <label>
-             <br>
-              Address
-             <br>
-             <input type="text" name="address">
-           </label>
-          <br>
-            <br>
-            <label>
-                <br>
-                Email:
-                <br>
-                <input type="email" name="email">
-            </label>
-             <br>
-             <label>
-                <br>
-                 Cellphone:
-                <br>
-                <input type="text" name="phone">
-             </label>
-             <br>
-             {{-- ..status waitss. --}}
-             <label>
-                <br>
-                 Price First Consultation:
-                <br>
-                <input type="text" name="price">
-             </label>
-             <br>
-             <label>
-                <br>
-                 Open_week:
-                <br>
-                <input type="text" name="open_week">
-             </label>
-             <br>
-             <label>
-                <br>
-                 Break_week:
-                <br>
-                <input type="text" name="break_week">
-             </label>
-             <br>
-    
-             <label>
-                <br>
-                 Close_week:
-                <br>
-                <input type="text" name="close_week">
-             </label>
-    
-    
-             <br>
-             <label>
-                <br>
-                 Open_weekend:
-                <br>
-                <input type="text" name="open_weekend">
-             </label>
-             <br>
-             <label>
-                <br>
-                 Break_weekend:
-                <br>
-                <input type="text" name="break_weekend">
-             </label>
-             <br>
-    
-             <label>
-                <br>
-                 Close_weekend:
-                <br>
-                <input type="text" name="close_weekend">
-             </label>
-    
-             <label>
-                <br>
-                 Note:
-                <br>
-                <input type="text" name="note">
-              </label>
     
             
     
@@ -112,10 +105,12 @@
     
             
     
-            <BR>
-                <button class="btn btn-primary" type="submit">Send</button>
-        </form>
+          
         </x-table>
+
+
+
+        {{-- fdasfads --}}
         </div>
     
         <div>

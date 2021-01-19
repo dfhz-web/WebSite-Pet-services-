@@ -40,13 +40,14 @@ class CoordinateController extends Controller
      */
     public function store(Request $request)
     {
-        $providers = Provider::create($request->all());
-        
-        
-        // $providerss = Provider::all()s;
 
+        return $request->all();
+        // $providers = Provider::create($request->all());
+        
+        
+        
    
-        return view('specially.coordinations.index',compact('providers'));
+        // return view('specially.coordinations.index',compact('providers'));
     }
 
     /**
