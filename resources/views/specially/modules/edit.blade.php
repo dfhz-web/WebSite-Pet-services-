@@ -1,4 +1,5 @@
 <x-app-layout>
+  {!! Form::model($module, ['route' => ['updates.update',$module],'method' => 'put']) !!}
   <div>
      <div class="container py-4 grid grid-cols-6">
          <aside class="col-start-2 col-span-4 text-center">
@@ -18,22 +19,61 @@
 
 
 
-
-      <div class="col-start-1 col-span-6  card mt-9">
+         
+         <div class="col-start-1 col-span-6  card mt-9">
           <div class="card-body text-gray-800">
-              <h1 class="text-2xl font-bold">Module's information</h1>
+             <div class="grid grid-cols-4 gap-5">
+                  <div class="">
+                  <h1 class="text-2xl font-bold">Module's information</h1>
+                  </div>
+                
+
+
+                <div class=""></div>
+                <div class="">
+                  {!! Form::label('kind_id', 'Kind') !!}
+                  {!! Form::select('kind_id',$kinds, null, ['class' => 'form-input block w-full mt-1']) !!}
+               </div>
+                <div class="">
+                  {!! Form::label('price_id', 'Price') !!}
+                    {!! Form::select('price_id',$prices, null, ['class' => 'form-input block w-full mt-1']) !!}
+    
+                </div>
+
+             </div>
+                  <hr class="mt-3 mb-4">
              
-              <hr class="mt-3 mb-4">
              
-               {{-- {!! Form::model($module, ['route' => ['updates.update',$module],'method' => 'put']) !!} --}}
-             
-               {!! Form::model($module, ['route' => ['updates.update',$module],'method' => 'put']) !!}
-                 
+                 <div class=""></div>
                 <div class="mb-3">
                      {!! Form::label('title', "Title's course") !!}
                      {!! Form::text('title', null, ['class' => 'form-input block w-full mt-1']) !!}
 
                 </div>
+
+
+                <h1 class=" font-bold mt-5 mb-5">Image of the module</h1>
+                <div class="grid grid-cols-2 gap-5">
+                  <figure>
+
+                    <div class="flex items-center">
+                      <div class="flex-shrink-0 h-30 w-full">
+                          <img class="h-20 w-50 rounded-full bg-cover " src={{Storage::url($module->picture->url)}} alt="">
+                      </div>
+                    </div>
+              
+
+
+                  </figure>
+                  <div class="">
+                    {!! Form::file('file', ['class' => 'form-input w-full']) !!}
+
+
+                  </div>
+                </div>
+
+                <br>
+                <br>
 
                 <div class="mb-3">
                   {!! Form::label('slug', "slug' course") !!}
@@ -53,8 +93,10 @@
 
                 </div>
 
-                
+               
 
+                
+              
 
                
                {!! Form::close() !!}

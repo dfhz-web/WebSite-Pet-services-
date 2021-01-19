@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\SpeciallyUpdate;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kind;
 use Illuminate\Http\Request;
 use App\Models\Module;
+use App\Models\Price;
 
 class ModuleController extends Controller
 {
@@ -58,7 +60,10 @@ class ModuleController extends Controller
      */
     public function edit(Module $module)
     {
-        return view('specially.modules.edit',compact('module'));
+        $kinds = Kind::pluck('name', 'id');
+        $prices = Price::pluck('name', 'id');
+       
+        return view('specially.modules.edit',compact('module','kinds','prices'));
     }
 
     /**
