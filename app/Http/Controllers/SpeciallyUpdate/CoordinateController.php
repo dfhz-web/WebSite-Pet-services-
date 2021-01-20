@@ -64,7 +64,7 @@ class CoordinateController extends Controller
         $providers = Provider::create($request->all());
 
 
-        return view('specially.coordinations.alreadyaddpv',compact('providers'));
+        // return view('specially.coordinations.show',compact('assistance'));
        
         
         

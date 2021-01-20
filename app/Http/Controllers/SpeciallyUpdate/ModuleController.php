@@ -7,6 +7,7 @@ use App\Models\Kind;
 use Illuminate\Http\Request;
 use App\Models\Module;
 use App\Models\Price;
+use Illuminate\Support\Facades\Storage;
 
 class ModuleController extends Controller
 {
@@ -39,8 +40,8 @@ class ModuleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+    
         $request->validate ([
             'kind_id' => 'required',
             'price_id' => 'required',
@@ -51,15 +52,25 @@ class ModuleController extends Controller
           
         ]);
 
-        $modules = Module::create($request->all());
+        $module = Module::create($request->all());
 
-        
-        // $kinds = Kind::pluck('name', 'id');
-        // $prices = Price::pluck('name', 'id');
+
        
-        // return view('specially.modules.edit',compact('modules','kinds','prices'));
+        if($request->file('file'))
+        {
+            $place = Storage::put('pictureupdate',$request->file('file'));
+              $module->picture()->create([
+                  'url' => $place
+              ]);
+            
+            
+         }
+         
+         
+        
 
-        return view('specially.modules.index');
+         return view('specially.modules.index',compact('module'));
+      
        
     }
 
@@ -69,10 +80,12 @@ class ModuleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show(Module $module)
     {
         return view('specially.modules.create',compact('module'));
     }
+   
 
     /**
      * Show the form for editing the specified resource.
