@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\SpeciallyUpdate;
 
+use App\Http\Controllers\AssistanceController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Assistance;
@@ -59,13 +60,17 @@ class CoordinateController extends Controller
           
         ]);
 
-        return $request->all();
-        // $providers = Provider::create($request->all());
+       
+        $providers = Provider::create($request->all());
+
+
+        return view('specially.coordinations.alreadyaddpv',compact('providers'));
+       
         
         
         
-   
-        // return view('specially.coordinations.index',compact('providers'));
+        
+
     }
 
     /**

@@ -4,13 +4,16 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 py-8">
         <div class="text-center">
 
-         {{-- lkdsjfklsda --}}
         <x-table>
       {!! Form::open(['route' => 'coordinations.store']) !!}
         
          <div class="mb-3">
             {!! Form::label('name', " Name:") !!}
             {!! Form::text('name', null, ['class' => 'form-input block w-full mt-1']) !!}
+
+            @error('name')
+            <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+            @enderror
 
          </div>
 

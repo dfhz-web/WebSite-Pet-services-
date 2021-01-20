@@ -54,17 +54,38 @@
 
                 <h1 class=" font-bold mt-5 mb-5">Image of the module</h1>
                 <div class="grid grid-cols-2 gap-5">
+              
+                  @isset($module->picture)
                   <figure>
-
                     <div class="flex items-center">
+                    <div class="flex-shrink-0 h-30 w-full">
+                        <img id="picture" class="h-20 w-50 rounded-full bg-cover " src={{Storage::url($module->picture->url)}} alt="">
+                    </div>
+                  </div>
+            
+
+
+                </figure>
+                  
+                 
+
+                    @else
+
+                    <figure>
+                      <div class="flex items-center">
                       <div class="flex-shrink-0 h-30 w-full">
-                          <img id="picture" class="h-20 w-50 rounded-full bg-cover " src={{Storage::url($module->picture->url)}} alt="">
+                          <img id="picture" class="h-20 w-50 rounded-full bg-cover " src="https://images.pexels.com/photos/53114/horse-arabs-stallion-ride-53114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
                       </div>
                     </div>
               
-
-
+  
+  
                   </figure>
+
+                    
+                  @endisset
+              
+                
                   <div class="">
                    
                     {!! Form::file('file', ['class' => 'form-input w-full','id'=>'file']) !!}
