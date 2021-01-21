@@ -1,9 +1,10 @@
 <div>
-    <div class="container py-8">
-        <!-- This example requires Tailwind CSS v2.0+ -->
-    
+    <div class="container py-8 px-auto flex justify-items-center">
+      
+     
         <x-table>
-                <div class="px-7 py-1">
+        
+                <div class="px-2 py-1">
                      <input wire:keydown="search_all_pages" wire:model="search" class="form-input w-full shadow-sm" placeholder="Here you will find a providers!">
                 </div>
     
@@ -12,7 +13,7 @@
                
                
                <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+                 <thead class="bg-gray-50">
                   <tr>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Kind
@@ -58,12 +59,15 @@
               </tbody>
               @endforeach
 
+
+              <div class="w-max">
+                {{$providers->links()}}
+        
+              </div>
+
                     
                 
-              <div class="px-6 py-4">
-                {{$providers->links()}}
-    
-              </div>
+             
             
     
 

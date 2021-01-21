@@ -6,10 +6,10 @@
               
               <h1 class="font-bold text-lg mb-4">Edit module</h1>
                 <div class="grid grid-cols-4">
-                  <div class=""> <a class="leading-8 mb-2 border-b-4 border-blue-200 pl-2" href="">Module's information</a></div>
-                  <div class="">  <a class="leading-8 mb-2 border-b-4 border-trasnparent pl-2" href="">Lessons</a></div>
-                  <div class=""> <a class="leading-8 mb-2 border-b-4 border-trasparent pl-2" href="">Goals</a></div>
-                  <div class=""> <a  class="leading-8 mb-2 border-b-4 border-trasparent pl-2" href="">Beneficiaries</a></div>
+                  <div class=""><a class="leading-8 mb-2 border-b-4 border-blue-200 pl-2" href="">Module's information</a></div>
+                  <div class=""><a class="leading-8 mb-2 border-b-4 border-trasnparent pl-2" href="">Lessons</a></div>
+                  <div class=""><a class="leading-8 mb-2 border-b-4 border-trasparent pl-2" href="">Goals</a></div>
+                  <div class=""><a class="leading-8 mb-2 border-b-4 border-trasparent pl-2" href="">Beneficiaries</a></div>
             </div>
          
      
@@ -88,8 +88,10 @@
                 
                   <div class="">
                    
-                    {!! Form::file('file', ['class' => 'form-input w-full','id'=>'file']) !!}
-
+                    {!! Form::file('file', ['class' => 'form-input w-full','id'=>'file','accept' => 'image/*']) !!}
+                    @error('file')
+                    <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+                    @enderror
 
                   </div>
                 </div>

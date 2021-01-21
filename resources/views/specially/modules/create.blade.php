@@ -70,8 +70,10 @@
 
                  <div class="">
                   
-                   {!! Form::file('file', ['class' => 'form-input w-full','id'=>'file']) !!}
-
+                   {!! Form::file('file', ['class' => 'form-input w-full','id'=>'file','accept' => 'image/*']) !!}
+                   @error('file')
+                   <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+                   @enderror
 
                  </div>
                </div>

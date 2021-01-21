@@ -55,7 +55,7 @@
                 <hr class="mt-3 mb-4">
                
                
-                 {!! Form::model($provider, ['route' => ['updates.update',$provider],'method' => 'put']) !!}
+                 {!! Form::model($provider, ['route' => ['providers.updateProvider',$provider],'method' => 'put']) !!}
                    
                   <div class="mb-3">
                        {!! Form::label('name', "Provider's name") !!}

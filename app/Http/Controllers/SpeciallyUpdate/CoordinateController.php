@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Assistance;
 use App\Models\Provider;
 use App\Http\Livewire\Coordinator;
+use App\Http\Requests\StoreCoordinate;
 
 class CoordinateController extends Controller
 {
@@ -39,32 +40,17 @@ class CoordinateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCoordinate $request)
     {
-        $request->validate ([
-            'name' => 'required',
-            'kind' => 'required',
-            'address' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'price' => 'required',
-            'open_week' => 'required',
-            'break_week' => 'required',
-            'close_week' => 'required',
-            'open_weekend' => 'required',
-            'break_weekend' => 'required',
-            'close_weekend' => 'required',
-            'note' => 'required',
+   
 
-            
-          
-        ]);
 
        
-        $providers = Provider::create($request->all());
+        $provider = Provider::create($request->all());
+       
 
 
-        // return view('specially.coordinations.show',compact('assistance'));
+        return view('specially.coordinations.showProvider',compact('provider'));
        
         
         
@@ -105,6 +91,12 @@ class CoordinateController extends Controller
 
     }
 
+    public function showProvider()
+    {
+        $providers = Provider::all();
+        return view('specially.coordinations.showProvider',compact('providers'));
+    }
+
 
     public function edit()
     {
@@ -119,10 +111,11 @@ class CoordinateController extends Controller
      */
 
 
-    public function updateProvider(Provider $provider)
+    public function updateProvider(Request $request, Provider $provider)
     {
-
-      return "Well Done";
+        $provider->update($request->all());
+        return redirect()->route('providers.showProvider',$provider);
+     
     }
 
 

@@ -49,6 +49,7 @@ class ModuleController extends Controller
             'slug' => 'required|unique:modules',
             'subtitle' => 'required',
             'description' => 'required',
+            'file' => 'image'
           
         ]);
 
@@ -69,7 +70,8 @@ class ModuleController extends Controller
          
         
 
-         return view('specially.modules.index',compact('module'));
+        //  return view('specially.modules.index',compact('module'));
+        return redirect()->route('updates.index');
       
        
     }
@@ -110,7 +112,45 @@ class ModuleController extends Controller
      */
     public function update(Request $request, Module $module)
     {
-        return "hi";
+        $request->validate ([
+            'kind_id' => 'required',
+            'price_id' => 'required',
+            'title' => 'required',
+            'slug' => 'required|unique:modules,slug,' . $module->id,
+            'subtitle' => 'required',
+            'description' => 'required',
+            'file' => 'image'
+
+           
+          
+        ]);
+        
+        $module->update($request->all());
+
+        if($request->file('file'))
+        {
+            $place = Storage::put('pictureupdate',$request->file('file'));
+            if($module->picture)
+            {
+                Storage::delete($module->picture->url);
+
+                $module->picture->update([
+                    'url' =>  $place
+                ]);
+
+            }
+            else{
+                $module->picture()->create([
+                    'url' =>  $place
+                ]);
+            }
+            
+            
+         } 
+
+
+
+        return redirect()->route('updates.edit',$module);
     }
 
     /**
