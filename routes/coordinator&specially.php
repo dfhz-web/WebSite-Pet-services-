@@ -4,8 +4,11 @@ use App\Http\Controllers\BackupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SpeciallyUpdate\ModuleController;
 use App\Http\Controllers\SpeciallyUpdate\CoordinateController;
+use App\Http\Livewire\Specially\ModuleExactly;
 
 Route::resource('modules', ModuleController::class)->names('updates');
+Route::get('modules/{module}/exactly',ModuleExactly::class)->name('updates.exactly');
+
 
 
 
