@@ -19,7 +19,7 @@ class CreateLessonsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('url');
-            $table->string('iframe');
+            $table->string('iframe')->nullable();
 
             $table->enum('fillout',[Lesson::fill_out_empty, Lesson::fill_out])->default(Lesson::fill_out_empty);
             $table->enum('answere',[Lesson::result_empty, Lesson::result])->default(Lesson::result_empty);
