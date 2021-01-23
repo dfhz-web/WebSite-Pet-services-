@@ -18,6 +18,7 @@ class Section extends Model
  
      }
 
+     
      ///relacion uno a muchos
      public function lessons()
      {
