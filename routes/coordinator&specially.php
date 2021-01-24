@@ -20,7 +20,7 @@ Route::get('modules/{module}/exactly',ModuleExactly::class)->name('updates.exact
 Route::resource('assistances', CoordinateController::class)->names('coordinations');
 Route::get('provider/{provider}/{assistance}/checkout',[CoordinateController::class, 'checkProvider'])->name('providers.checkProvider');
 Route::get('provider/{provider}/{assistance}/edit',[CoordinateController::class, 'editProvider'])->name('providers.editProvider');
-Route::put('provider/{provider}/update',[CoordinateController::class, 'updateProvider'])->name('providers.updateProvider');
+Route::put('provider/{provider}/{assistance}/update',[CoordinateController::class, 'updateProvider'])->name('providers.updateProvider');
 Route::get('providershow/show',[CoordinateController::class, 'showProvider'])->name('providers.showProvider');
 
 

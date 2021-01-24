@@ -115,7 +115,10 @@ class CoordinateController extends Controller
     public function updateProvider(Request $request, Provider $provider, Assistance $assistance)
     {
         $provider->update($request->all());
-        return redirect()->route('providers.showProvider',$provider);
+        return view('specially.coordinations.edit',compact('provider','assistance'));
+    
+  
+        // return redirect()->route('providers.showProvider',$provider);
      
     }
 
