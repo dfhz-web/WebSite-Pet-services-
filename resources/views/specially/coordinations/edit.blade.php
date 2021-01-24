@@ -7,7 +7,8 @@
                 <h1 class="font-bold text-lg mb-4">Update provider information</h1>
                   <div class="grid grid-cols-3">
                     <div class=""> 
-                          <a class="leading-8 mb-2 pl-2" href="{{route('providers.checkProvider',$provider)}}">
+                    
+                          <a class="leading-8 mb-2 pl-2" href="{{route('providers.checkProvider',[$provider,$assistance])}}">
 
                             <button
                             type="button"

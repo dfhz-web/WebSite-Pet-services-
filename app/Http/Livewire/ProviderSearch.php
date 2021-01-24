@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Assistance;
 use Livewire\Component;
 use App\Models\Provider;
 use Livewire\WithPagination;
@@ -11,6 +12,16 @@ class ProviderSearch extends Component
 
     use WithPagination;
     public $search;
+
+    public $assistance;
+    
+
+    public function mount(Assistance $assistance)
+    {
+        $this->assistance = $assistance;
+       
+       
+    }
 
     public function render()
     {

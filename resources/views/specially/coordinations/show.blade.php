@@ -186,16 +186,20 @@
 
                     </div>
 
+
                     <x-table>
 
          
      
-             @livewire('provider-search')
+             {{-- @livewire('provider-search') --}}
+
+             @livewire('provider-search', ['assistance' => $assistance], key($assistance->id))
               
            </x-table>
          </div>
     
     
+         
     
     
        </div>

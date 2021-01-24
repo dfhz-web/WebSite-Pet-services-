@@ -79,14 +79,15 @@ class CoordinateController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function checkProvider(Provider $provider)
+    public function checkProvider(Provider $provider,Assistance $assistance)
     {
-        return view('specially.coordinations.check',compact('provider'));
+
+        return view('specially.coordinations.check',compact('provider','assistance'));
     }
 
-    public function editProvider(Provider $provider)
+    public function editProvider(Provider $provider,Assistance $assistance)
     {
-        return view('specially.coordinations.edit',compact('provider'));
+        return view('specially.coordinations.edit',compact('provider','assistance'));
 
 
     }
@@ -111,7 +112,7 @@ class CoordinateController extends Controller
      */
 
 
-    public function updateProvider(Request $request, Provider $provider)
+    public function updateProvider(Request $request, Provider $provider, Assistance $assistance)
     {
         $provider->update($request->all());
         return redirect()->route('providers.showProvider',$provider);

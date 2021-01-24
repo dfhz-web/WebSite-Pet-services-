@@ -1,8 +1,11 @@
 <div>
     <div class="container py-8 px-auto flex justify-items-center">
       
+      
      
         <x-table>
+        
+         
         
                 <div class="px-2 py-1">
                      <input wire:keydown="search_all_pages" wire:model="search" class="form-input w-full shadow-sm" placeholder="Here you will find a providers!">
@@ -48,7 +51,7 @@
                     <td>
 
                       <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="{{route('providers.checkProvider',$provider)}}" class="text-indigo-600 hover:text-indigo-900">Go</a>
+                        <a href="{{route('providers.checkProvider',[$provider,$assistance])}}" class="text-indigo-600 hover:text-indigo-900">Go</a>
                       </td>
                
                     </tr>
