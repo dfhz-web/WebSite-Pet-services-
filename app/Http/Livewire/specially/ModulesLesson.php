@@ -9,12 +9,15 @@ use Livewire\Component;
 
 class ModulesLesson extends Component
 {
-    public $section, $lesson,$platforms,$name,$platform_id = 1,$url;
+    public $section, $lesson,$platforms,$name,$platform_id = 1,$url,$fillout,$answere;
 
     protected $rules = [
         'lesson.name' => 'required',
         'lesson.platform_id' => 'required',
         'lesson.url' =>  ['required', 'regex:%^ (?:https?://)? (?:www\.)? (?: youtu\.be/ | youtube\.com (?: /embed/ | /v/ | /watch\?v= ) ) ([\w-]{10,12}) $%x'],
+        'lesson.fillout' => 'required',
+        'lesson.answere' => 'required',
+
     ];
 
     public function mount(Section $section)
@@ -39,6 +42,8 @@ class ModulesLesson extends Component
             'name' => 'required',
             'platform_id' => 'required',
             'url' =>  ['required', 'regex:%^ (?:https?://)? (?:www\.)? (?: youtu\.be/ | youtube\.com (?: /embed/ | /v/ | /watch\?v= ) ) ([\w-]{10,12}) $%x'],
+            'fillout' => 'required',
+            'answere' => 'required',
         ];
         if ($this->platform_id == 2) {
             $rules['url'] = ['required', 'regex:/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/'];
@@ -50,10 +55,12 @@ class ModulesLesson extends Component
             'name' => $this->name,
             'platform_id' => $this->platform_id,
             'url' => $this->url,
-            'section_id' => $this->section->id
+            'section_id' => $this->section->id,
+            'fillout' => $this->fillout,
+            'answere' => $this->answere,
         ]);
 
-        $this->reset(['name','platform_id','url','section_id']);
+        $this->reset(['name','platform_id','url','section_id','fillout','answere']);
         $this->section = Section::find($this->section->id); 
 
     }
@@ -88,9 +95,24 @@ class ModulesLesson extends Component
 
 
     }
+
+    public function destroy(Lesson $lesson)
+    {
+        $lesson->delete();
+        $this->section = Section::find($this->section->id); 
+
+        
+
+    }
+
+
+
+
     public function cancel()
     {
         $this->lesson = new Lesson();
 
     }
+
+
 }

@@ -6,63 +6,96 @@
 
                     @if ($lesson->id == $item->id)
 
-                     <div class="">
 
-                                <div class="flex items-center">
-                                    <label class="w-32">Name: </label>
-                                    <input wire:model="lesson.name" class="form-input w-full">
+                        <form wire:submit.prevent="update">
 
-
-                                </div>
-
-                                @error('lesson.name')
-                                <span class="text-1xl text-yellow-400">{{$message}}</span>
-                                    
-                                @enderror
+                                    <div class="flex items-center">
+                                        <label class="w-32">Name: </label>
+                                        <input wire:model="lesson.name" class="form-input w-full">
 
 
-                                <div class="flex items-center mt-4">
-                                    <label class="w-32">Platform: </label>
-                                    <select wire:model="lesson.platform_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">>
-                                        @foreach ($platforms as $item)
-                                          <option value="{{$item->id}}">{{$item->name}}</option>
-                                            
-                                        @endforeach
-                                    </select>
+                                    </div>
 
-                                </div>
+                                    @error('lesson.name')
+                                    <span class="text-1xl text-yellow-400">{{$message}}</span>
+                                        
+                                    @enderror
 
 
+                                    <div class="flex items-center mt-4">
+                                        <label class="w-32">Platform: </label>
+                                        <select wire:model="lesson.platform_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">>
+                                            @foreach ($platforms as $item)
+                                              <option value="{{$item->id}}">{{$item->name}}</option>
+                                                
+                                            @endforeach
+                                        </select>
 
-                                <div class="flex items-center mt-4">
-                                    <label class="w-32">Url: </label>
-                                    <input wire:model="lesson.url" class="form-input w-full">
-
-
-                                </div>
-
-                                @error('lesson.url')
-                                <span class="text-1xl text-yellow-400">{{$message}}</span>
-                                    
-                                @enderror
+                                    </div>
+                                    @error('lesson.platform_id')
+                                    <span class="text-1xl text-yellow-400">{{$message}}</span>
+                                        
+                                    @enderror
 
 
 
-                                <div class="mt-4 flex justify-end">
-                                    <button class="btn btn-danger" wire:click="update">Update</button>
-                                    <button class="btn btn-primary ml-2" wire:click="cancel">Cancel</button>
-
-                                </div>
+                                    <div class="flex items-center mt-4">
+                                        <label class="w-32">Url: </label>
+                                        <input wire:model="lesson.url" class="form-input w-full">
 
 
-                     </div>
+                                    </div>
+
+                                    @error('lesson.url')
+                                    <span class="text-1xl text-yellow-400">{{$message}}</span>
+                                        
+                                    @enderror
+
+
+
+                                                <div class="flex items-center mt-4">
+                                                  <label class="w-32">Fillout: </label>
+                                                  <input wire:model="lesson.fillout" class="form-input w-full">
+
+
+                                              </div>
+
+                                              @error('lesson.fillout')
+                                              <span class="text-1xl text-yellow-400">{{$message}}</span>
+                                                  
+                                              @enderror
+
+
+
+                                                  <div class="flex items-center mt-4">
+                                                    <label class="w-32">Answere: </label>
+                                                    <input wire:model="lesson.answere" class="form-input w-full">
+                
+                
+                                                </div>
+                
+                                                @error('lesson.answere')
+                                                <span class="text-1xl text-yellow-400">{{$message}}</span>
+                                                    
+                                                @enderror
+
+
+
+                                    <div class="mt-4 flex justify-end">
+                                        <button type="submit" class="btn btn-danger">Update</button>
+                                        <button type="button" class="btn btn-primary ml-2" wire:click="cancel">Cancel</button>
+
+                                    </div>
+
+
+                        </form>
 
                     @else
                         
                    
 
                                     <header>
-                                        <h1><i class="fab fa-google-wallet text-yellow-200 mr-1"></i> Process: {{$item->id}}</h1>
+                                        <h1><i class="fab fa-google-wallet text-yellow-200 mr-1"></i> Process: {{$item->name}}</h1>
                                     </header>
 
 
@@ -70,7 +103,8 @@
                                         <hr class="m-3">
                                         <p class="text-sm">Platform: {{$item->platform->name}}</p>
                                         <p class="text-sm">Link: <a class="text-blue-500" href="{{$item->url}}" target="_blank">{{$item->url}}</a></p>
-                                        
+                                        <p class="text-sm">Fillout: {{$item->fillout}}</p>
+                                        <p class="text-sm">Answere: {{$item->answere}}</p>
                                         <div class="mt-2">
 
                                                 <button class="border border-yellow-500 text-yellow-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-yellow-600 focus:outline-none focus:shadow-outline" wire:click="edit({{$item}})">
@@ -79,7 +113,7 @@
                                                 </button>
 
                             
-                                                <button class="border border-red-500 text-red-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-red-600 focus:outline-none focus:shadow-outline">
+                                                <button class="border border-red-500 text-red-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-red-600 focus:outline-none focus:shadow-outline" wire:click="destroy({{$item}})">
 
                                                 Delete
                                                 </button>
@@ -116,49 +150,80 @@
         <h1 class="text-xl font-bold mb-2">Add new process</h1>
 
         <div class="">
-            <div class="flex items-center">
-                <label class="w-32">Name: </label>
-                <input wire:model="name" class="form-input w-full">
+                  <div class="flex items-center">
+                      <label class="w-32">Name: </label>
+                      <input wire:model="name" class="form-input w-full">
 
 
-            </div>
+                  </div>
 
-            @error('name')
-            <span class="text-1xl text-yellow-400">{{$message}}</span>
+                  @error('name')
+                  <span class="text-1xl text-yellow-400">{{$message}}</span>
+                      
+                  @enderror
+
+
+                    <div class="flex items-center mt-4">
+                        <label class="w-32">Platform: </label>
+                        <select wire:model="platform_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">>
+                            @foreach ($platforms as $item)
+                              <option value="{{$item->id}}">{{$item->name}}</option>
+                                
+                            @endforeach
+                        </select>
+
+                    </div>
+
                 
-            @enderror
-
-
-            <div class="flex items-center mt-4">
-                <label class="w-32">Platform: </label>
-                <select wire:model="platform_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">>
-                    @foreach ($platforms as $item)
-                      <option value="{{$item->id}}">{{$item->name}}</option>
+                    @error('platform_id')
+                    <span class="text-1xl text-yellow-400">{{$message}}</span>
                         
-                    @endforeach
-                </select>
+                    @enderror
 
-            </div>
-
-         
-            @error('platform_id')
-            <span class="text-1xl text-yellow-400">{{$message}}</span>
-                
-            @enderror
+                  
 
 
 
-            <div class="flex items-center mt-4">
-                <label class="w-32">Url: </label>
-                <input wire:model="url" class="form-input w-full">
+                      <div class="flex items-center mt-4">
+                          <label class="w-32">Url: </label>
+                          <input wire:model="url" class="form-input w-full">
 
 
-            </div>
+                      </div>
 
-            @error('url')
-            <span class="text-1xl text-yellow-400">{{$message}}</span>
-                
-            @enderror
+                      @error('url')
+                      <span class="text-1xl text-yellow-400">{{$message}}</span>
+                          
+                      @enderror
+
+
+                      
+                      <div class="flex items-center mt-4">
+                        <label class="w-32">Fill out: </label>
+                        <input wire:model="fillout" class="form-input w-full">
+
+
+                    </div>
+
+                    @error('fillout')
+                    <span class="text-1xl text-yellow-400">{{$message}}</span>
+                        
+                    @enderror
+
+
+                    <div class="flex items-center mt-4">
+                      <label class="w-32">Answere: </label>
+                      <input wire:model="answere" class="form-input w-full">
+
+
+                  </div>
+
+                  @error('answere')
+                  <span class="text-1xl text-yellow-400">{{$message}}</span>
+                      
+                  @enderror
+
+
 
 
 
