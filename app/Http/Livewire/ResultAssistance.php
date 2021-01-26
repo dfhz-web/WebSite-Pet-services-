@@ -17,6 +17,7 @@ class ResultAssistance extends Component
    public $answereProvider;
    public $help;
    public $store;
+   public $s;
 
 
 
@@ -31,38 +32,18 @@ class ResultAssistance extends Component
                          ->where('assistance_id', '=' , $user->id)
                          ->get();
 
-        $this->help = Help::all();
-
-        $ams = $this->help;
-
-        $this->store = $ams;
-
-        $this->provider = Provider::where('id','=','20')->get();
-
-
-
-
-
-
-
-        
-
-        
-
-        
-
-      
-
-     
+                        
 
        
 
-       
+
 
     }
 
     public function render()
     {
+        $this->provider = Provider::find(5);
+      
         return view('livewire.result-assistance');
     }
 }
