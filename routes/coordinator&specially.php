@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\BackupController;
+use App\Http\Controllers\speciallyupdate\assignmentAnswere;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SpeciallyUpdate\ModuleController;
 use App\Http\Controllers\SpeciallyUpdate\CoordinateController;
+use App\Http\Livewire\ResultAssistance;
 use App\Http\Livewire\Specially\ModuleExactly;
 
 Route::resource('modules', ModuleController::class)->names('updates');
@@ -22,6 +24,9 @@ Route::get('provider/{provider}/{assistance}/checkout',[CoordinateController::cl
 Route::get('provider/{provider}/{assistance}/edit',[CoordinateController::class, 'editProvider'])->name('providers.editProvider');
 Route::put('provider/{provider}/{assistance}/update',[CoordinateController::class, 'updateProvider'])->name('providers.updateProvider');
 Route::get('providershow/show',[CoordinateController::class, 'showProvider'])->name('providers.showProvider');
+
+Route::get('provider/{provider}/{assistance}/give',[assignmentAnswere::class, 'store'])->name('providers.assistances.give');
+
 
 
 

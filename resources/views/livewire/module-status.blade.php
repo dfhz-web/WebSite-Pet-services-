@@ -1,5 +1,6 @@
 
   <div>
+    
      <section class="mt-1 bg-gray-700 py-0 text-center text-7xl">
         <div class="text-5xl font-extrabold ...">
             <span class="text-center text-4xl bg-clip-text text-transparent 
@@ -211,7 +212,15 @@
 
 
                 @if ($currently->answere == 1)
-                   @livewire('result-assistance')  
+
+
+                @livewire('result-assistance', ['user' => $this->currentUser], key($this->currentUser->id))
+              
+             
+
+        
+                  
+                   
                 @endif
                 <br>
 

@@ -39,6 +39,7 @@ class ModuleStatus extends Component
         }
 
          $this->currentUser =  Auth::user();
+         $stepuser = $this->currentUser;
       
         if (!$this->currently) {
             $this->currently = $module->lessons->last();

@@ -22,4 +22,16 @@ class Provider extends Model
      {
        return $this->belongsToMany('App\Models\User');
      }
+
+
+   
+      ///relacion uno a uno inversa
+      public function answere()
+      {
+          return $this->belongsTo('App\Models\Answere');
+      }
+
+
+
+
 }

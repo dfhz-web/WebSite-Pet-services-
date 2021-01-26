@@ -29,15 +29,15 @@ class CreateProvidersTable extends Migration
 
 
 
-            $table->time('open_week');
-            $table->time('break_week');
-            $table->time('close_week');
+            $table->text('open_week');
+            $table->text('break_week');
+            $table->text('close_week');
 
 
           
-            $table->time('open_weekend');
-            $table->time('break_weekend');
-            $table->time('close_weekend');
+            $table->text('open_weekend');
+            $table->text('break_weekend');
+            $table->text('close_weekend');
 
             $table->text('note');
 

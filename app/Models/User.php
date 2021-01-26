@@ -102,6 +102,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Obtain');
     }
 
+
     ///relacion muchos a muchos
    public function providers()
    {
@@ -138,6 +139,14 @@ class User extends Authenticatable
       public function assistances()
       {
           return $this->belongsToMany('App\Models\Assistance');
+      }
+
+      ///relacion uno a muchos inversa
+
+      public function answere()
+      {
+          return $this->belongsTo('App\Models\Answere');
+  
       }
 
 

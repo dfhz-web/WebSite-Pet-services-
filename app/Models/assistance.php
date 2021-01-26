@@ -39,4 +39,12 @@ class Assistance extends Model
        return  $this->users->contains(auth()->user()->id);
     } 
 
+
+
+      ///relacion uno a muchos inversa
+      public function answere()
+      {
+          return $this->belongsTo('App\Models\Answere');
+      }
+
 }
