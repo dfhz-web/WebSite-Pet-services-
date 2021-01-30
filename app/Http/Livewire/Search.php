@@ -17,6 +17,8 @@ class Search extends Component
         return view('livewire.search');
     }
 
+    
+
     public function getResultsProperty()
     {
         return Module::where('title','LIKE', '%' .$this->search. '%')->take(8)->where('status',3)->get();

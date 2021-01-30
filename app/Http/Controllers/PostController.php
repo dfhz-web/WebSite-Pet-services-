@@ -18,6 +18,7 @@ class PostController extends Controller
        return view('posts.index', compact('posts'));
 
 
+
    }
    public function show(Post $post)
    {
@@ -25,8 +26,10 @@ class PostController extends Controller
                         ->where('status',2)
                         ->where('id', '!=' , $post->id )
                         ->latest('id')
-                        ->take(4)
+                        ->take(8)
                         ->get();
+
+        
         return view('posts.show',compact('post','similars'));
 
    }

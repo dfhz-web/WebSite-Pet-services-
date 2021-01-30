@@ -10,7 +10,7 @@
               </a>
           </h1>
 
-          <div class="text-gray-700 text-base">
+          <div class="text-gray-700 text-base cursor-default">
               {{$post->extract}}
           </div>
       </div>

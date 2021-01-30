@@ -8,9 +8,11 @@
             <p class="text-black text-lg mt-2 mb-4">Here you find what you need it!</p>
             
 
+            
               <!-- component -->
               <!-- This is an example component -->
               {{-- i used livewire to complemet this view with the componente of livewire for search use in home --}}
+
               @livewire('search')
             
         

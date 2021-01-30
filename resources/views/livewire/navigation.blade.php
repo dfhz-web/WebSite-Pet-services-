@@ -28,7 +28,7 @@
     ];
 @endphp
 
-<nav class="bg-gray-800 shadow" ">
+<nav class="bg-gray-800 shadow">
   <div class="container">
 
     <div class="shadow relative flex items-center justify-between h-16">

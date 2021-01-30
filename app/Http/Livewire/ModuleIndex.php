@@ -18,6 +18,7 @@ class ModuleIndex extends Component
     public $type_id;
     public $kind_id;
 
+    
 
     public function render()
     {   
@@ -40,3 +41,8 @@ class ModuleIndex extends Component
         $this->reset(['type_id','kind_id']);
     }
 }
+
+
+
+
+
