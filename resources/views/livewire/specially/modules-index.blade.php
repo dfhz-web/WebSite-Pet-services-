@@ -1,9 +1,28 @@
 <div class="container py-8">
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <a class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline"
+    
+  <div class="grid grid-cols-3 gap-5">
+    <div class="">
+      <a class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline"
     href="{{route('updates.create')}}">Create new module</a>
-    <br>
-    <br>
+
+
+    </div>
+    <div class="">
+
+    </div>
+    <div class="">
+      <a class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline"
+      href="">Update Blog</a>
+
+    </div>
+
+
+  </div>
+
+    
+
+
+    <div class="mt-5">
     <x-table>
             <div class="px-7 py-2">
                  <input wire:keydown="search_all_pages" wire:model="search" class="form-input w-full shadow-sm" placeholder="looking for a module?. Here you will!">
@@ -162,6 +181,7 @@
           @endif
 
     </x-table>
+</div>
       
   
 </div>

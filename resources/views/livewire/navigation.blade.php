@@ -28,7 +28,7 @@
     ];
 @endphp
 
-<nav class="bg-gray-800 shadow">
+<nav class="bg-gray-800 shadow" x-data="{open:false}">
   <div class="container">
 
     <div class="shadow relative flex items-center justify-between h-16">
@@ -36,7 +36,7 @@
       <!-- Mobile menu button-->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
  
-        <button x-on:click="open =true" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
+        <button x-on:click="open = true" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <!-- Icon when menu is closed. -->
           <!--
@@ -58,6 +58,8 @@
           </svg>
         </button>
       </div>
+
+      
       <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
         
          <!--Logotipo-->
@@ -290,17 +292,17 @@
  
 <!--menu movil cuando queda peque;o -->
  
-  <div class="sm:hidden" >
+  <div class="sm:hidden" x-show="open">
     <div class="px-2 pt-2 pb-3 space-y-1"  >
       
-       @foreach ($nav_links as $nav_link)
+       {{-- @foreach ($nav_links as $nav_link)
            
       
        <a   href="{{ $nav_link['route'] }}"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" :active="$nav_link['active']">
         {{$nav_link['name']}}
        </a>
 
-       @endforeach
+       @endforeach --}}
 
       
       

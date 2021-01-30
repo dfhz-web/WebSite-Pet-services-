@@ -1,22 +1,24 @@
 <x-app-layout>
   
     
-    <div class=" container grid grid-cols-4 bg-cover" style="background-image: url({{asset('storage/another/touch.jpg')}})">
+    <div class=" container grid  grid-cols-1 lg:grid-cols-4  bg-cover" style="background-image: url({{asset('storage/another/touch.jpg')}})">
         <div class="col-span-3">
             {{-- <a href="{{route('suggestions.create',$suggestions)}}" class="btn btn-primary btn-block btn-primary:hover">Fill out request</a>
              --}}
-             <div class="mt-40 text-center">
+             <div class="mt-40 text-center mb-6">
 
                 <div class="bg-orange-lightest border-l-4 border-orange text-orange-dark p-4" role="alert">
                     <p class="font-bold">Completed</p>
                     <p>Your request has been successfully completed, We will be in touch as soon as possible</p>
-                  </div>
+                </div>
 
+
+             </div>
 
         </div>
 
-        </div>
-        <div class="">
+
+        <div class="mt-5">
             <section class="mb-12">
 
                   

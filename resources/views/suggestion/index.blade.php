@@ -1,7 +1,7 @@
 <x-app-layout>
   
     
-    <div class=" container grid grid-cols-4 bg-cover" style="background-image: url({{asset('storage/another/touch.jpg')}})">
+    <div class=" container grid grid-cols-1 lg:grid-cols-4 bg-cover" style="background-image: url({{asset('storage/another/touch.jpg')}})">
         <div class="col-span-3">
             {{-- <a href="{{route('suggestions.create',$suggestions)}}" class="btn btn-primary btn-block btn-primary:hover">Fill out request</a>
              --}}
@@ -122,7 +122,7 @@
         </div>
 
         </div>
-        <div class="">
+        <div class="mt-7">
             <section class="mb-12">
 
                   
