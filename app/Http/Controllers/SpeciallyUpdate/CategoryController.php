@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('specially.categories.index')
+        $categories = Category::all();
+        return view('specially.categories.index',compact('categories'));
     }
 
     /**
@@ -25,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('specially.categories.create')
+        return view('specially.categories.create');
     }
 
     /**
@@ -47,7 +48,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('specially.categories.store',compact('category'))
+        return view('specially.categories.store',compact('category'));
     }
 
     /**
@@ -58,7 +59,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('specially.categories.edit',compact('category'))
+        return view('specially.categories.edit',compact('category'));
     }
 
     /**

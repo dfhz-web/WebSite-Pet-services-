@@ -22,7 +22,9 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
 
-            @livewire('navigation')
+            {{-- @livewire('navigation') --}}
+            @livewire('exploration-main')
+
            
 
 
@@ -68,9 +70,9 @@
 
         
         
-        <footer class="w-full text-center border-t border-grey p-4 pin-b bg-blue-dark">
+        {{-- <footer class="w-full text-center border-t border-grey p-4 pin-b bg-blue-dark">
             <p class="font-bold font-sans text-white">This is our footer</p>
-        </footer>
+        </footer> --}}
 
         @stack('modals')
 
