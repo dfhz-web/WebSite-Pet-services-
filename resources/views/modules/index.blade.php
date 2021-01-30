@@ -19,5 +19,8 @@
     </section>
 
     @livewire('module-index')
+    @livewire('mainfooter')
+    
+
 
 </x-app-layout>

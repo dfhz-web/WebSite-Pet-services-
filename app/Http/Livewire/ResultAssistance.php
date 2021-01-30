@@ -14,10 +14,7 @@ class ResultAssistance extends Component
    public $user;
    public $answere;
    public $provider;
-   public $answereProvider;
-   public $help;
-   public $store;
-   public $s;
+  
 
 
 

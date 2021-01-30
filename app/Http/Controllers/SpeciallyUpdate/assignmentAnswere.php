@@ -19,10 +19,7 @@ class assignmentAnswere extends Controller
                 
                 ]);
 
-                Help::create([
-                    'provider' => $provider->id,
-                ]);
-
+          
                 return $provider;
 
     }

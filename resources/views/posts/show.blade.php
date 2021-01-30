@@ -42,4 +42,5 @@
         </div>
 
     </div>
+    @livewire('mainfooter')
 </x-app-layout>

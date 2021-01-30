@@ -57,6 +57,7 @@
            
            
                      </main>
+                     {{-- @livewire('mainfooter') --}}
            
                  </div>
               </div>

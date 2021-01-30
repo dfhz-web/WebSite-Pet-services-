@@ -186,6 +186,7 @@
 
         </div>
        
+        @livewire('mainfooter')
 
     
 </x-app-layout>

@@ -1,9 +1,12 @@
-<div class="">
+
+
+ <div class="">
   
 
   
 
  @if ($this->answere)
+  {{$answere}}
   <div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-pink-500">
   <h1 class="text-bold text-black">Provider:</h1> 
   <br>
@@ -64,4 +67,4 @@
 
 
     
-  </div>
+  </div> 

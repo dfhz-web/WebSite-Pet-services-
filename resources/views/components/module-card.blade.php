@@ -6,15 +6,15 @@
     
     <div class="card-body">
 
-          <h1 class="card-title">
-            {{Str::limit($module->title, 40)}}
+          <h1 class="card-title cursor-default">
+            {{Str::limit($module->title, 15)}}
           <h1>
-            <p class="text-gray-500 text-sm mb-2">
+            <p class="text-gray-500 text-sm mb-2 cursor-default">
               Managm: {{$module->managment->name}}
             </p>
           <div class="flex ">
 
-            <p class="text-sm text-gray-500 mr-auto">
+            <p class="text-sm text-gray-500 mr-auto cursor-default">
               <i class="fas fa-users"></i>
               ({{$module->beneficiaries_count}})
             </p>
