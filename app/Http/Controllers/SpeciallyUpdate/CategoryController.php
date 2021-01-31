@@ -37,7 +37,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:categories'
+        ]);
+        $category = Category::create($request->all());
+        return redirect()->route('categories.edit',$category)->with('info','Category successfully created');
     }
 
     /**
@@ -71,7 +76,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => "required|unique:categories,slug,$category->id"
+        ]);
+
+        $category->update($request->all());
+        return redirect()->route('categories.edit',$category)->with('info','Category already update');
+
+
     }
 
     /**
@@ -82,6 +95,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index')->with('info','Category already deleted');;
     }
 }

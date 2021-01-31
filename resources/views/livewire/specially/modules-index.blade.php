@@ -1,18 +1,31 @@
 <div class="container py-8">
     
-  <div class="grid grid-cols-3 gap-5">
-    <div class="">
-      <a class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline"
-    href="{{route('updates.create')}}">Create new module</a>
+  <div class="grid grid-cols-2 gap-5">
+        <div class="" >
+            
+          
+          <a class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline"
+            href="{{route('updates.create')}}">Create new module</a>
 
 
-    </div>
-    <div class="">
 
-    </div>
-    <div class="">
-      <a class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline"
-      href="{{route('categories.index')}}">Update Blog</a>
+        </div>
+    {{-- <div class="">
+
+    </div> --}}
+
+
+    <div class="" x-data="{ open: false }">
+         
+              <a x-on:click="open = true" class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline">Update Blog</a>
+
+              <div  x-show="open" x-on:click.away="open = false" class="origin-top-right  absolute right-45 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+              
+                <a href="{{route('categories.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Categories</a>
+              
+              </div> 
+
+        
 
     </div>
 

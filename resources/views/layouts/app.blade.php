@@ -59,7 +59,18 @@
 
 
 
-   
+     @isset($jsjs)
+     
+     {{$jsjs}}
+         
+     @endisset
+
+     @isset($jsedit)
+     {{$jsedit}}
+         
+     @endisset
+
+     
 
 
     </body>
