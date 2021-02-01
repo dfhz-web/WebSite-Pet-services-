@@ -10,6 +10,12 @@ class Tag extends Model
     protected $guarded = [''];
     use HasFactory;
 
+    
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     //relacion muchos a muchos
 
     public function posts()

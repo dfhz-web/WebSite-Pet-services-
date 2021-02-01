@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $guarded = [''];
+    protected $guarded = ['id','create_at','update_at'];
     use HasFactory;
 
     ///relacion n a uno.....relacion uno a muchos inversa

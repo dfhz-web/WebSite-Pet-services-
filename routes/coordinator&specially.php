@@ -9,6 +9,8 @@ use App\Http\Livewire\ResultAssistance;
 use App\Http\Livewire\Specially\ModuleExactly;
 // use App\Http\Controllers\SpeciallyUpdate\blog;
 use App\Http\Controllers\SpeciallyUpdate\CategoryController;
+use App\Http\Controllers\SpeciallyUpdate\TagController;
+use App\Http\Controllers\SpeciallyUpdate\ShareController;
 
 Route::resource('modules', ModuleController::class)->names('updates');
 Route::get('modules/{module}/exactly',ModuleExactly::class)->name('updates.exactly');
@@ -31,6 +33,9 @@ Route::get('provider/{provider}/{assistance}/give',[assignmentAnswere::class, 's
 
 
 Route::resource('categories', CategoryController::class)->names('categories');
+Route::resource('tags', TagController::class)->names('tags');
+
+Route::resource('posts', ShareController::class)->names('shares');
 
 
 

@@ -70,6 +70,11 @@
          
      @endisset
 
+     @isset($tagg)
+     {{$tagg}}
+         
+     @endisset
+
      
 
 

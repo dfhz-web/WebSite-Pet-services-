@@ -1,5 +1,5 @@
 <?php
-
+  
 namespace Database\Seeders;
 
 use App\Models\User;
@@ -42,6 +42,6 @@ class UserSeeder extends Seeder
                 $user3->assignRole('Coordinator');
 
                 
-        User::factory(40)->create();
+        User::factory(30)->create();
     }
 }

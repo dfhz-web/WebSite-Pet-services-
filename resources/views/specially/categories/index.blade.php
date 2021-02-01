@@ -6,7 +6,9 @@
     <div class="container grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
             <div class="">
 
-                <div class="bg-white overflow-hidden border-b-4 border-blue-500 w-full h-full">
+                <a href="{{route('updates.index')}}"><i class="fas fa-hand-point-left"></i>Back</a>
+
+                <div class="bg-white overflow-hidden border-b-4 border-blue-500 w-full h-full ">
                     <img src="https://images.unsplash.com/photo-1573748240263-a4e9c57a7fcd" alt="People" class="w-full object-cover h-32 sm:h-48 md:h-64">
                     <div class="p-4 md:p-6">
                     <p class="text-blue-500 font-semibold text-xs mb-1 leading-none">Blog</p>
@@ -94,41 +96,6 @@
 
 
 
-                                        {{-- <tr class="hover:bg-grey-lighter">
-                                            <td class="py-4 px-6 border-b border-grey-light">New York</td>
-                                            <td class="py-4 px-6 border-b border-grey-light">
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">Edit</a>
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="hover:bg-grey-lighter">
-                                            <td class="py-4 px-6 border-b border-grey-light">Paris</td>
-                                            <td class="py-4 px-6 border-b border-grey-light">
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">Edit</a>
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="hover:bg-grey-lighter">
-                                            <td class="py-4 px-6 border-b border-grey-light">London</td>
-                                            <td class="py-4 px-6 border-b border-grey-light">
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">Edit</a>
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="hover:bg-grey-lighter">
-                                            <td class="py-4 px-6 border-b border-grey-light">Oslo</td>
-                                            <td class="py-4 px-6 border-b border-grey-light">
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">Edit</a>
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="hover:bg-grey-lighter">
-                                            <td class="py-4 px-6 border-b border-grey-light">Mexico City</td>
-                                            <td class="py-4 px-6 border-b border-grey-light">
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">Edit</a>
-                                            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">View</a>
-                                            </td>
-                                        </tr> --}}
                                         </tbody>
                                     </table>
                                     </div>
@@ -154,6 +121,13 @@
 
 
             </div>
+
+
+
+
+
+
+
 
 
     </div>
