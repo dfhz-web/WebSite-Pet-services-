@@ -84,6 +84,22 @@
 
                     </div>
 
+
+                    <div class="row">
+
+                        <div class="col">
+
+                        </div>
+                        <div class="col">
+                            <div class="image-wrapper">
+                                <img src="https://cdn.pixabay.com/photo/2020/12/30/14/26/lion-5873637__340.jpg" alt="">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
                     <div class="mb-4">
 
                         {!! Form::label('extract', 'Extract: ') !!}

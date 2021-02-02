@@ -116,7 +116,7 @@ $nav_links = [
           </button>
   
           <!-- Profile dropdown -->
-          <div class="ml-3 relative" x-data="{ open: false }">
+          <div class="z-10 ml-3 relative" x-data="{ open: false }">
             <div>
               <button x-on:click="open = true" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
                 <span class="sr-only">Open user menu</span>
