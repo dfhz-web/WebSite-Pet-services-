@@ -15,7 +15,7 @@ use App\Http\Controllers\SpeciallyUpdate\ShareController;
 Route::resource('modules', ModuleController::class)->names('updates');
 Route::get('modules/{module}/exactly',ModuleExactly::class)->name('updates.exactly');
 
-
+Route::get('modules/{module}/goals', [ModuleController::class,'goals'])->name('updates.goals');
 
 
 
@@ -36,6 +36,8 @@ Route::resource('categories', CategoryController::class)->names('categories');
 Route::resource('tags', TagController::class)->names('tags');
 
 Route::resource('posts', ShareController::class)->names('shares');
+
+
 
 
 

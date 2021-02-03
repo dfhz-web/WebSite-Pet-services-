@@ -1,7 +1,7 @@
 <div>
  @foreach ($section->lessons as $item)
 
-   <article class="card mt-5">
+   <article class="card mt-5" x-data="{open: false}">
                 <div class="card-body">
 
                     @if ($lesson->id == $item->id)
@@ -95,17 +95,17 @@
                    
 
                                     <header>
-                                        <h1><i class="fab fa-google-wallet text-yellow-200 mr-1"></i> Process: {{$item->name}}</h1>
+                                        <h1 x-on:click="open = !open" class="cursor-pointer"><i class="fab fa-google-wallet text-yellow-200 mr-1"></i> Process: {{$item->name}}</h1>
                                     </header>
 
 
-                                    <div class="">
+                                    <div x-show="open">
                                         <hr class="m-3">
                                         <p class="text-sm">Platform: {{$item->platform->name}}</p>
                                         <p class="text-sm">Link: <a class="text-blue-500" href="{{$item->url}}" target="_blank">{{$item->url}}</a></p>
                                         <p class="text-sm">Fillout: {{$item->fillout}}</p>
                                         <p class="text-sm">Answere: {{$item->answere}}</p>
-                                        <div class="mt-2">
+                                        <div class="m-2">
 
                                                 <button class="border border-yellow-500 text-yellow-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-yellow-600 focus:outline-none focus:shadow-outline" wire:click="edit({{$item}})">
                                                 Edit
@@ -118,6 +118,11 @@
                                                 Delete
                                                 </button>
 
+                                        </div>
+
+
+                                        <div class="">
+                                          @livewire('lesson-description', ['lesson' => $item], key($item->id))
                                         </div>
                                             
                                     

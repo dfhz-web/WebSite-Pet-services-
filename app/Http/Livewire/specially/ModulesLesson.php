@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class ModulesLesson extends Component
 {
-    public $section, $lesson,$platforms,$name,$platform_id = 1,$url,$fillout,$answere;
+    public $section, $lesson,$platforms,$name,$platform_id = 1,$url,$fillout,$answere,$section_id;
 
     protected $rules = [
         'lesson.name' => 'required',
@@ -50,7 +50,8 @@ class ModulesLesson extends Component
         }
 
         $this->validate($rules);
-
+        
+       
         Lesson::create([
             'name' => $this->name,
             'platform_id' => $this->platform_id,

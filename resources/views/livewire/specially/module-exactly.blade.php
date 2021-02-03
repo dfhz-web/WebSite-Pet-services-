@@ -7,6 +7,59 @@
   <h1 class="text-2xl font-bold">Parts that need to be complete to get assistances</h1>
   <hr class="mt-3 mb-6">
 
+
+
+
+    @foreach ($module->sections as $item)
+      <article class="card mb-4 mt-10" x-data="{open: true}">
+        <div class="card-body bg-blue-100">
+
+
+          @if ($section->id == $item->id)
+
+            <form wire:submit.prevent="update">
+               <input wire:model="section.name" class="form-input w-full" placeholder="Put a name of the section">
+
+               @error('section.name')
+               <span class="text-1xl text-yellow-400">{{$message}}</span>
+                   
+               @enderror
+            </form>
+
+
+          @else
+
+          <header class="flex justify-between item-center">
+            <h1 x-on:click="open = !open"  class="cursor-pointer"><strong>Section: </strong>{{$item->name}}</h1>
+            <div class="">
+              <i class="fas fa-pencil-alt mr-2 cursor-pointer text-yellow-400" wire:click="edit({{$item}})">Edit</i>
+              <i wire:click="destroy({{$item}})"  class="fas fa-trash-alt cursor-pointer text-red-500">Delete</i>
+            </div>
+          </header>
+
+
+          <div x-show="open">
+
+            @livewire('specially.modules-lesson', ['section' =>$item], key($item->id))
+
+            
+                 
+          </div>
+              
+          @endif
+
+         
+          
+      </div>
+
+
+
+      </article>
+      
+  @endforeach 
+
+
+
   <div x-data="{open:false}" class="">
     <a x-on:click="open = !open" class="flex items-center cursor-pointer">
       <i class="fas fa-plus-circle text-2xl text-yellow-300 m-2"></i>
@@ -45,55 +98,6 @@
   </div>
   
 
-
-
-    @foreach ($module->sections as $item)
-      <article class="card mb-4 mt-10">
-        <div class="card-body bg-blue-100">
-
-
-          @if ($section->id == $item->id)
-
-            <form wire:submit.prevent="update">
-               <input wire:model="section.name" class="form-input w-full" placeholder="Put a name of the section">
-
-               @error('section.name')
-               <span class="text-1xl text-yellow-400">{{$message}}</span>
-                   
-               @enderror
-            </form>
-
-
-          @else
-
-          <header class="flex justify-between item-center">
-            <h1 class="cursor-pointer"><strong>Section: </strong>{{$item->name}}</h1>
-            <div class="">
-              <i class="fas fa-pencil-alt mr-2 cursor-pointer text-yellow-400" wire:click="edit({{$item}})">Edit</i>
-              <i wire:click="destroy({{$item}})"  class="fas fa-trash-alt cursor-pointer text-red-500">Delete</i>
-            </div>
-          </header>
-
-
-          <div>
-
-            @livewire('specially.modules-lesson', ['section' =>$item], key($item->id))
-
-            
-                 
-          </div>
-              
-          @endif
-
-         
-          
-      </div>
-
-
-
-      </article>
-      
-  @endforeach 
 
   
 </div>
