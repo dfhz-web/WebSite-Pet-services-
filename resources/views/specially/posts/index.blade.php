@@ -1,5 +1,8 @@
 <x-app-layout>
     <div class="">
+       
+
+
         @livewire('share')
     </div>
 
