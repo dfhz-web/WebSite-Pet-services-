@@ -58,10 +58,22 @@
                         @else      
                 
 
-                           <form action="{{route('modules.getting',$module)}}" method="post">
-                              @csrf
-                               <button class="py-2 sm:px-10 btn btn-danger btn-block" type="submit">Get start it!</button>
-                           </form>
+                           @if ($module->price->value == 0)
+
+                                <form action="{{route('modules.getting',$module)}}" method="post">
+                                    {{-- <p class="text-white">Free</p> --}}
+
+                                    @csrf
+                                    <button class="py-2 sm:px-10 btn btn-danger btn-block" type="submit">Get start it!</button>
+                                </form>
+                               
+                           @else
+
+                             <p class="text-white">${{$module->price->value}}</p>
+
+                              <a href="{{route('pay.checkout',$module)}}" class="py-2 sm:px-10 btn btn-danger btn-block">Make payment!</a>
+                               
+                           @endif
 
                             
                         @endcan
@@ -95,7 +107,7 @@
                   
                         
                         <article class="flex mb-6">
-                            <img class=" h-32 w-40 object-cover object-center src="{{Storage::url($similar->picture->url)}}" alt="">
+                            <img class=" h-32 w-40 object-cover object-center" src="{{Storage::url($similar->picture->url)}}" alt="">
                             <div class="ml-3">
                                 <h1>
                                     <a class="font-bold text-gray-500" href="">{{Str::limit($similar->title,40)}}</a>
