@@ -163,4 +163,9 @@ class ModuleController extends Controller
     {
         //
     }
+
+    public function goals(Module $module)
+    {
+      return view('specially.modules.goals',compact('module'));
+    }
 }

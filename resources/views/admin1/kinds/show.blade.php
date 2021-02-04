@@ -7,11 +7,7 @@
 
 @section('content')
     <p>Here you have the totally control, Boss!.</p>
-     <div>
-    <img src="https://cdn.pixabay.com/photo/2016/08/02/16/25/lion-1563980_960_720.jpg" class="img-fluid"> 
-
-     </div>
-
+  
       
 
    

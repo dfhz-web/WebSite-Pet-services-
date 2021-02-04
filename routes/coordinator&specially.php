@@ -11,12 +11,14 @@ use App\Http\Livewire\Specially\ModuleExactly;
 use App\Http\Controllers\SpeciallyUpdate\CategoryController;
 use App\Http\Controllers\SpeciallyUpdate\TagController;
 use App\Http\Controllers\SpeciallyUpdate\ShareController;
+use App\Http\Livewire\ModulesBeneficiaries;
 
 Route::resource('modules', ModuleController::class)->names('updates');
 Route::get('modules/{module}/exactly',ModuleExactly::class)->name('updates.exactly');
 
 Route::get('modules/{module}/goals', [ModuleController::class,'goals'])->name('updates.goals');
 
+Route::get('modules/{module}/beneficiaries', ModulesBeneficiaries::class)->name('updates.beneficiaries');
 
 
 
