@@ -58,22 +58,22 @@
                         @else      
                 
 
-                           @if ($module->price->value == 0)
+                            @if ($module->price->value == 0) 
 
                                 <form action="{{route('modules.getting',$module)}}" method="post">
-                                    {{-- <p class="text-white">Free</p> --}}
+                                    <p class="text-white">Free</p> 
 
                                     @csrf
                                     <button class="py-2 sm:px-10 btn btn-danger btn-block" type="submit">Get start it!</button>
                                 </form>
                                
-                           @else
+                            @else
 
                              <p class="text-white">${{$module->price->value}}</p>
 
                               <a href="{{route('pay.checkout',$module)}}" class="py-2 sm:px-10 btn btn-danger btn-block">Make payment!</a>
                                
-                           @endif
+                           @endif 
 
                             
                         @endcan

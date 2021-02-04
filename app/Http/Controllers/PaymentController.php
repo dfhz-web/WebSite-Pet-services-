@@ -46,6 +46,7 @@ class PaymentController extends Controller
                   ->setRedirectUrls($redirectUrls);
 
                   // After Step 3
+                  
                   try {
                     $payment->create($apiContext);
                     
