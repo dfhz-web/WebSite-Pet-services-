@@ -1,5 +1,5 @@
 
-  <div>
+  <div> 
     
      <section class="mt-1 bg-gray-700 py-0 text-center text-7xl">
         <div class="text-5xl font-extrabold ...">
@@ -80,7 +80,7 @@
 
 
                                             <a class="cursor-pointer" wire:click="lessonchange({{$lesson}})">
-                                                {{$lesson->id}} 
+                                                {{$lesson->name}} 
                                                 {{-- @if($lesson->complete)
                                                 (completed)
                                             @endif</a> --}}
@@ -94,6 +94,8 @@
                   </div>
 
               </div>
+
+          
 
 
                <div class="lg:col-span-2">
@@ -125,6 +127,7 @@
                         <h1 class="">Fill out</h1>
                         </div>
  
+                        
                 
                  <form action="{{route('assistance.store',$this->currentUser->id)}}" method="post">
                         
@@ -213,6 +216,7 @@
 
                 @if ($currently->answere == 1)
 
+                
 
                 @livewire('result-assistance', ['user' => $this->currentUser], key($this->currentUser->id))
               
@@ -292,6 +296,8 @@
               </div>
             </div>
       </div>
+      
 
 
   </div>
+ 

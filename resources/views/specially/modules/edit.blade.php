@@ -14,6 +14,8 @@
 
 
        <div class="">
+        {!! Form::label('type_id', 'Type') !!}
+        {!! Form::select('type_id',$types, null, ['class' => 'form-input block w-full mt-1']) !!}
 
        </div>
        <div class="">
@@ -25,6 +27,8 @@
        {!! Form::select('price_id',$prices, null, ['class' => 'form-input block w-full mt-1']) !!}
 
        </div>
+
+     
 
   </div>
        <hr class="mt-3 mb-4">

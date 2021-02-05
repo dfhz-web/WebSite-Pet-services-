@@ -7,6 +7,7 @@ use App\Models\Kind;
 use Illuminate\Http\Request;
 use App\Models\Module;
 use App\Models\Price;
+use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
 
 class ModuleController extends Controller
@@ -30,7 +31,8 @@ class ModuleController extends Controller
     {
         $kinds = Kind::pluck('name', 'id');
         $prices = Price::pluck('name', 'id');
-        return view('specially.modules.create',compact('kinds','prices'));
+        $types = Type::pluck('name','id');
+        return view('specially.modules.create',compact('kinds','prices','types'));
 
     }
 
@@ -45,6 +47,7 @@ class ModuleController extends Controller
         $request->validate ([
             'kind_id' => 'required',
             'price_id' => 'required',
+            'type_id' => 'required',
             'title' => 'required',
             'slug' => 'required|unique:modules',
             'subtitle' => 'required',
@@ -99,8 +102,9 @@ class ModuleController extends Controller
     {
         $kinds = Kind::pluck('name', 'id');
         $prices = Price::pluck('name', 'id');
+        $types = Type::pluck('name','id');
        
-        return view('specially.modules.edit',compact('module','kinds','prices'));
+        return view('specially.modules.edit',compact('module','kinds','prices','types'));
     }
 
     /**
@@ -115,6 +119,7 @@ class ModuleController extends Controller
         $request->validate ([
             'kind_id' => 'required',
             'price_id' => 'required',
+            'type_id' => 'required',
             'title' => 'required',
             'slug' => 'required|unique:modules,slug,' . $module->id,
             'subtitle' => 'required',

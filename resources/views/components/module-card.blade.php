@@ -1,4 +1,5 @@
 @props(['module'])
+{{-- {{$module->id}} --}}
 
 <article class="card flex flex-col">
     <img class="h-36 w-full object-cover object-center" src="{{Storage::url($module->picture->url)}}" alt="">
