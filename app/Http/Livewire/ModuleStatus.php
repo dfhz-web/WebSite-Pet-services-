@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Livewire;
-
+use App\Models\Answere;
 use Livewire\Component;
 use App\Models\Module;
 use App\Models\Lesson;
@@ -12,6 +12,7 @@ use App\Models\Assistance;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use PHPUnit\Framework\Test;
 
 class ModuleStatus extends Component
 {
@@ -22,7 +23,11 @@ class ModuleStatus extends Component
     public $assistance;
     public $currentUser;
     public $rights=0;
-    public $come;
+    // public $come;
+
+
+    // public $text1,$answere;
+    
     
     
     public function mount(Module $module, Assistance $assistance)
@@ -43,7 +48,12 @@ class ModuleStatus extends Component
          $this->currentUser =  Auth::user();
          $stepuser = $this->currentUser;
 
-        //  $this->come = Assistance::select('id')->where('user_id','=',$this->currentUser->id)->get();
+
+        //  Test
+        // $this->text1 = Assistance::select('id')->where('user_id','=',$this->currentUser->id)->get();
+        // $this->answere = Answere::where('assistance_id','=',   $this->text1[0]->id)->get();
+        //  test 
+
     
       
         if (!$this->currently) {

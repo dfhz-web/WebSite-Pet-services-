@@ -19,6 +19,7 @@ class Coordinator extends Component
         $assistances = Assistance::where('symptoms','LIKE','%'. $this->search .'%')->paginate();
         
         
+        
    
         
         

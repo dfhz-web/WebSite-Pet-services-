@@ -1,7 +1,7 @@
 
   <div> 
 
-
+    
 
     
      <section class="mt-1 bg-gray-700 py-0 text-center text-7xl">
@@ -268,9 +268,16 @@
 
                 @if ($currently->answere == 1)
 
-                
+                        
 
-                @livewire('result-assistance', ['user' => $this->currentUser], key($this->currentUser->id))
+                  
+                  
+                        @livewire('result-assistance', ['user' => $this->currentUser], key($this->currentUser->id)) --}}
+
+                        
+                  
+                 
+
               
              
 

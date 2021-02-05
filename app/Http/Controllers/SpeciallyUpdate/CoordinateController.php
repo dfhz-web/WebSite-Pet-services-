@@ -10,6 +10,8 @@ use App\Models\Provider;
 use App\Http\Livewire\Coordinator;
 use App\Http\Requests\StoreCoordinate;
 
+
+
 class CoordinateController extends Controller
 {
     /**
@@ -21,8 +23,7 @@ class CoordinateController extends Controller
     public function index(Assistance $assistance)
     {
         
-       
-        return view('specially.coordinations.index',compact('assistance'));
+               return view('specially.coordinations.index',compact('assistance'));
     }
 
     /**
