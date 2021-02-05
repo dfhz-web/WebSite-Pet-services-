@@ -10,7 +10,7 @@ class AssistanceController extends Controller
     public function store(Request $request)
     {
         $assistances = Assistance::create($request->all());
-        $assistances->users()->attach(auth()->user()->id);
+        // $assistances->user()->attach(auth()->user()->id);
    
         return 'well done';
         // return view('suggestion.done',compact('assistances'));

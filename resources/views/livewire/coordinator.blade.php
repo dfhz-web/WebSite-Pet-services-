@@ -2,6 +2,7 @@
 
 
 
+
     <x-table>
         <div class="px-7 py-2">
             <input  wire:model="search" class="form-input w-full shadow-sm" placeholder="looking for an especify's case?.">
@@ -44,9 +45,11 @@
                     </div>
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900">
-                       {{$assistance->users}}
+                       {{-- {{$assistance->users}} --}}
+                       {{$assistance->user->id}}
                       
                   
+                       
                       </div>
                       <div class="text-sm text-gray-500">
                         {{$assistance->email}}

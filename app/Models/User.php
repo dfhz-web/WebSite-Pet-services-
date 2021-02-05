@@ -136,10 +136,26 @@ class User extends Authenticatable
 
     //  /assistances
     //   /relacion muchos a muchos inversa
+    //   public function assistances()
+    //   {
+    //       return $this->belongsToMany('App\Models\Assistance');
+    //   }
+
+    ///relacion uno a muchos
+
       public function assistances()
       {
-          return $this->belongsToMany('App\Models\Assistance');
+          return $this->hasMany('App\Models\assistance');
       }
+
+
+
+
+
+
+
+
+
 
       ///relacion uno a muchos inversa
 
@@ -148,6 +164,9 @@ class User extends Authenticatable
           return $this->belongsTo('App\Models\Answere');
   
       }
+
+
+
 
 
 

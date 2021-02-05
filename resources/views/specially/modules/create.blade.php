@@ -1,4 +1,5 @@
 <x-app-layout>
+  
 
     {!! Form::open(['route' => 'updates.store','files'=> true]) !!}
     {!! Form::hidden('user_id', auth()->user()->id) !!}

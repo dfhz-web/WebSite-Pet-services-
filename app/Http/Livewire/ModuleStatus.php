@@ -22,6 +22,8 @@ class ModuleStatus extends Component
     public $assistance;
     public $currentUser;
     public $rights=0;
+    public $come;
+    
     
     public function mount(Module $module, Assistance $assistance)
     {
@@ -40,6 +42,9 @@ class ModuleStatus extends Component
 
          $this->currentUser =  Auth::user();
          $stepuser = $this->currentUser;
+
+        //  $this->come = Assistance::select('id')->where('user_id','=',$this->currentUser->id)->get();
+    
       
         if (!$this->currently) {
             $this->currently = $module->lessons->last();

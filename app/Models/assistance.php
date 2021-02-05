@@ -14,12 +14,24 @@ class Assistance extends Model
     const Coordinated= 1;
     
 
-
+///relacion uno a muchos inversa
+// public function platform()
+// {
+//     return $this->belongsTo('App\Models\Platform');
+// }
     //  users
-    public function users()
-    {
-        return $this->belongsToMany('App\Models\User');
-    }
+    // public function users()
+    // {
+    //     return $this->belongsToMany('App\Models\User');
+    // }
+
+
+    ///relacion uno a muchos inversa
+      public function user()
+      {
+        return $this->belongsTo('App\Models\User');
+      }
+
 
 
 
@@ -46,5 +58,9 @@ class Assistance extends Model
       {
           return $this->belongsTo('App\Models\Answere');
       }
+
+
+
+
 
 }

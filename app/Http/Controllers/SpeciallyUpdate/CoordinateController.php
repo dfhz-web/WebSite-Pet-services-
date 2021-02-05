@@ -20,6 +20,7 @@ class CoordinateController extends Controller
     
     public function index(Assistance $assistance)
     {
+        
        
         return view('specially.coordinations.index',compact('assistance'));
     }

@@ -27,6 +27,11 @@ class CreateAssistancesTable extends Migration
             // $table->unsignedBigInteger('lesson_id');
             // $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
 
+            
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
 
             $table->timestamps();
         });

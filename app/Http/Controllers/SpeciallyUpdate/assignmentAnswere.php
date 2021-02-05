@@ -18,6 +18,7 @@ class assignmentAnswere extends Controller
                 'provider_id' => $provider->id,
                 
                 ]);
+                
 
           
                 return $provider;

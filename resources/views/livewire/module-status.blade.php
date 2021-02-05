@@ -1,5 +1,8 @@
 
   <div> 
+
+
+
     
      <section class="mt-1 bg-gray-700 py-0 text-center text-7xl">
         <div class="text-5xl font-extrabold ...">
@@ -129,9 +132,14 @@
  
                         
                 
-                 <form action="{{route('assistance.store',$this->currentUser->id)}}" method="post">
-                        
-                    @csrf
+                 {{-- <form action="{{route('assistance.store',$this->currentUser->id)}}" method="post"> --}}
+                    {!! Form::open(['route'=>['assistance.store',$this->currentUser->id]]) !!}
+                     
+                    
+                    {{-- @csrf --}}
+
+
+{{--                     
                      <label>
                         Symptoms:
                           <br>
@@ -144,7 +152,22 @@
                  
                     @enderror
             
-                    <br>
+                    <br> --}}
+
+
+                    <div class="m-3">
+
+                        {!! Form::label('symptoms', 'Symptoms') !!}
+                        {!! Form::text('symptoms',null, ['class'=>'form-input block w-full mt-1']) !!}
+                    
+                        @error('symptoms')
+                        <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+                        @enderror
+                    </div>
+                    
+
+
+{{-- 
                     <label>
                         <br>
                         Email:
@@ -157,10 +180,22 @@
              
                    @enderror
             
-                    <br>
+                    <br> --}}
+
+
+                    <div class="m-3">
+
+                        {!! Form::label('email', 'Email: ') !!}
+                        {!! Form::text('email',null, ['class'=>'form-input block w-full mt-1']) !!}
+                    
+                        @error('email')
+                        <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+                        @enderror
+                    </div>
+                    
             
             
-                    <label>
+                    {{-- <label>
                         <br>
                         Address:
                         
@@ -174,7 +209,22 @@
              
                 @enderror
             
-                    <BR>
+                    <BR> --}}
+
+                        
+                    <div class="m-3">
+
+                        {!! Form::label('address', 'Address: ') !!}
+                        {!! Form::text('address',null, ['class'=>'form-input block w-full mt-1']) !!}
+                    
+                        @error('address')
+                        <strong class="text-yellow-400 text-bold">{{$message}}</strong>
+                        @enderror
+                    </div>
+                    
+
+                    {!! Form::hidden('user_id', $this->currentUser->id) !!}
+
                         
               
                        
@@ -192,15 +242,17 @@
                        @else
                       
                          <i class="fas fa-check cursor-pointer"> I accepted term and condition of use my personal data</i><br><br>
-                         <button class="btn btn-primary" type="submit" >Send</button>
-                        
+                         {{-- <button class="btn btn-primary" type="submit" >Send</button> --}}
+                         <div class="flex justify-center">
+                            {!! Form::submit('Create', ['class' => ' cursor-pointer border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline']) !!}
+                        </div>
                    @endif
                    <br>
                   
 
 
 
-                </form>
+                   {!! Form::close() !!}
             </section>
                 </div>
                      
