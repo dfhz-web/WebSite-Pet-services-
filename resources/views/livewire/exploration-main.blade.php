@@ -2,20 +2,16 @@
 @php
 $nav_links = [
   [
-    'name' => 'Dashboard',
+    'name' => 'Start',
     'route' => route('home'),
     'active' => request()->routeIs('home')
   ],
   [
-    'name' => 'Blog',
+    'name' => 'News',
     'route' =>  route('posts.index'),
     'active' => request()->routeIs('posts.*')
   ],
-  [
-    'name' => 'Modules',
-    'route' =>   route('modules.index'),
-    'active' => request()->routeIs('modules.*')
-  ],
+ 
   [
     'name' => 'About us',
     'route' => route('aboutus'),
@@ -27,6 +23,8 @@ $nav_links = [
     'active' => request()->routeIs('suggestions.*')
   ],
 ];
+
+
 @endphp
 
 <nav class="bg-gray-800" x-data="{ open:false }">

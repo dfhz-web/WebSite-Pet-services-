@@ -42,6 +42,6 @@ class UserSeeder extends Seeder
                 $user3->assignRole('Coordinator');
 
                 
-        User::factory(30)->create();
+        User::factory(20)->create();
     }
 }

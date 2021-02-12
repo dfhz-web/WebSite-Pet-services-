@@ -19,8 +19,7 @@ class Share extends Component
 
     public function render()
     {
-        $posts = Post::where('user_id',auth()->user()->id)
-                       ->where('name','LIKE','%'. $this->search . '%')
+        $posts = Post::where('name','LIKE','%'. $this->search . '%')
                        ->latest('id')
                        ->paginate(6);
         return view('livewire.share',compact('posts'));
