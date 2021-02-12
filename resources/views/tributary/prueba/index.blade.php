@@ -1,6 +1,13 @@
 <x-specially-layout>
 
-
+  
+        @if (session('info'))
+        <!-- component -->
+          <div  class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline" role="alert">
+              <p>{{session('info')}}</p>
+          </div>
+        @endif
+    
 
     <x-table>
              <table>
@@ -57,11 +64,19 @@
 
 
                           <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="" class="border border-yellow-500 text-yellow-500 rounded-md px-4 py-2 m-0 transition duration-500 ease select-none hover:text-white hover:bg-yellow-600 focus:outline-none focus:shadow-outline">Edit</a>
+                            <a href="{{route('prueba.edit',$item)}}" class="border border-yellow-500 text-yellow-500 rounded-md px-4 py-2 m-0 transition duration-500 ease select-none hover:text-white hover:bg-yellow-600 focus:outline-none focus:shadow-outline">Edit</a>
                           </td>
 
                           <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
-                            <a href="" class="border border-red-500 text-red-500 rounded-md px-4 py-2 m-0 transition duration-500 ease select-none hover:text-white hover:bg-red-600 focus:outline-none focus:shadow-outline">Delete</a>
+                            {{-- <a href="{{route('prueba.destroy',$item)}}" class="border border-red-500 text-red-500 rounded-md px-4 py-2 m-0 transition duration-500 ease select-none hover:text-white hover:bg-red-600 focus:outline-none focus:shadow-outline">Delete</a> --}}
+                            <form action="{{route('prueba.destroy',$item)}}" method="POST">
+                           
+                              @method('delete')
+                              @csrf
+                            <button class="border border-red-500 text-red-500 rounded-md px-4 py-2 m-0 transition duration-500 ease select-none hover:text-white hover:bg-red-600 focus:outline-none focus:shadow-outline" type="submit">Delete</button>
+                            </form>
+                         
+                         
                           </td>
                   
                         </tr>

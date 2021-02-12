@@ -84,9 +84,21 @@ Route::post('assistance/{user}',[AssistanceController::class,'store'])->name('as
     
 // });
 
-Route::get('/pruebashow',[PruebaController::class, 'show'])->name('prueba.show');
 
 Route::get('/prueba',[PruebaController::class, 'index'])->name('prueba.index');
 
+Route::get('/pruebashow',[PruebaController::class, 'show'])->name('prueba.show');
 
 Route::post('/prueba/create',[PruebaController::class, 'create'])->name('prueba.create');
+
+Route::get('/prueba/{id}/edit',[PruebaController::class, 'showedit'])->name('prueba.edit');
+
+Route::put('/prueba/{id}/update',[PruebaController::class, 'update'])->name('prueba.update');
+
+Route::delete('/prueba/{id}/destroy',[PruebaController::class, 'destroy'])->name('prueba.destroy');
+
+
+
+
+
+
