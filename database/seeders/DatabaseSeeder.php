@@ -44,15 +44,15 @@ class DatabaseSeeder extends Seeder
 
        $this->call(PostSeeder::class);
       
-       $this->call(KindSeeder::class);
+    //    $this->call(KindSeeder::class);
 
-       $this->call(TypeSeeder::class);
+    //    $this->call(TypeSeeder::class);
 
-       $this->call(PriceSeeder::class);
+    //    $this->call(PriceSeeder::class);
 
-       $this->call(PlatformSeeder::class);
+    //    $this->call(PlatformSeeder::class);
 
-       $this->call(ModuleSeeder::class);
+    //    $this->call(ModuleSeeder::class);
 
 
        $this->call(SuggestionSeeder::class);

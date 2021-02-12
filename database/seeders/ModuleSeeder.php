@@ -21,45 +21,45 @@ class ModuleSeeder extends Seeder
      */
     public function run()
     {
-        $modules = Module::factory(100)->create();
+    //     $modules = Module::factory(100)->create();
 
-        foreach ($modules as $module) {
-             Picture::factory(1)->create([
-            'pictureable_id' => $module->id,
-            'pictureable_type' => 'App\Models\Module',
+    //     foreach ($modules as $module) {
+    //          Picture::factory(1)->create([
+    //         'pictureable_id' => $module->id,
+    //         'pictureable_type' => 'App\Models\Module',
 
-            ]);
+    //         ]);
 
         
 
-            Requirement::factory(4)->create([
-                'module_id' =>  $module->id
-            ]);
+    //         Requirement::factory(4)->create([
+    //             'module_id' =>  $module->id
+    //         ]);
 
             
 
-            Goal::factory(4)->create([
-                'module_id' =>  $module->id
-            ]);
+    //         Goal::factory(4)->create([
+    //             'module_id' =>  $module->id
+    //         ]);
 
-            Audience::factory(4)->create([
-                'module_id' =>  $module->id
-            ]);
+    //         Audience::factory(4)->create([
+    //             'module_id' =>  $module->id
+    //         ]);
 
 
-            $sections = Section::factory(4)->create([
-                'module_id' =>  $module->id
-            ]);
+    //         $sections = Section::factory(4)->create([
+    //             'module_id' =>  $module->id
+    //         ]);
 
-            foreach ($sections as $section) {
-                $lessons = Lesson::factory(4)->create(['section_id' => $section->id]);
+    //         foreach ($sections as $section) {
+    //             $lessons = Lesson::factory(4)->create(['section_id' => $section->id]);
                
-                  foreach ($lessons as $lesson) {
-                      Description::factory(1)->create(['lesson_id' => $lesson->id]);
-                    }
+    //               foreach ($lessons as $lesson) {
+    //                   Description::factory(1)->create(['lesson_id' => $lesson->id]);
+    //                 }
                
                 
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
   }

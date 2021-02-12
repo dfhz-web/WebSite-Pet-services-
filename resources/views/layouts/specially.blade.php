@@ -32,13 +32,26 @@
                 <div class="container py-4 grid grid-cols-6">
                     <aside class="col-start-2 col-span-4 text-center">
                          
-                         <h1 class="font-bold text-lg mb-4">Edit module</h1>
-                           <div class="grid grid-cols-4">
-                            <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('updates.goals',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.goals',$module)}}">Details</a></div>
+                         <h1 class="font-bold text-lg mb-4">Centro de información tributario</h1>
+                           <div class="grid grid-cols-5">
+                                                    {{-- <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('updates.goals',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.goals',$module)}}">Details</a></div>
 
-                             <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4 @routeDetective('updates.edit',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.edit',$module)}}">Module's information</a></div>
-                             <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('updates.exactly',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.exactly',$module)}}">Lessons</a></div>
-                             <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('updates.beneficiaries',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.beneficiaries',$module)}}">Beneficiaries</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4 @routeDetective('updates.edit',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.edit',$module)}}">Module's information</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('updates.exactly',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.exactly',$module)}}">Lessons</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('updates.beneficiaries',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.beneficiaries',$module)}}">Beneficiaries</a></div> --}}
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('prueba.index') border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('prueba.index')}}">Prueba</a></div> 
+
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Cliente</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Departamento</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Detalle-factura</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Empresa</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Factura</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Municipio</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Pais</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Productos</a></div>
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Tipo_documento</a></div>
+
+                           
                            </div>
                     
                 

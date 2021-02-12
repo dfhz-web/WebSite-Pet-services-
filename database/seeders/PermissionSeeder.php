@@ -30,37 +30,18 @@ class PermissionSeeder extends Seeder
             'name' => 'Delete modules',
         ]);
 
+
+
+        
+
         Permission::create([
             'name' => 'Coordinate modules',
         ]);
 
 
 
-        Permission::create([
-            'name' => 'Admin-dashboard',
-        ]);
-        Permission::create([
-            'name' => 'create-role',
-        ]);
-        Permission::create([
-            'name' => 'list-role',
-        ]);
-        Permission::create([
-            'name' => 'edit-role',
-        ]);
-        Permission::create([
-            'name' => 'delete-role',
-        ]);
-
-   
-
-        Permission::create([
-            'name' => 'read-users',
-        ]);
-        Permission::create([
-            'name' => 'Edit-users',
-        ]);
-
+        
       
     }
 }
+

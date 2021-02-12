@@ -138,23 +138,23 @@ $nav_links = [
               <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                 Your Profile
               </a>
-              @can(['Admin-dashboard'])
+              {{-- @can(['Admin-dashboard'])
               <a href="{{route('administrator.home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                Administrator
               </a>
-              @endcan
+              @endcan --}}
 
 
              @can(['Create modules','Read modules','Update modules','Delete modules'])
               <a href="{{route('updates.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-               Specially Update
+                Tributary
               </a>
              @endcan
 
 
              @can(['Coordinate modules'])
-               <a href="{{route('coordinations.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                 Coordinator
+               <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                Veterinarian
                </a>
              @endcan 
 

@@ -12,6 +12,7 @@ use App\Models\Module;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\AssistanceController;
+use App\Http\Controllers\tributary\PruebaController;
 
 
 Route::get('/',HomeController::class)->name('home');
@@ -82,3 +83,10 @@ Route::post('assistance/{user}',[AssistanceController::class,'store'])->name('as
     
     
 // });
+
+Route::get('/pruebashow',[PruebaController::class, 'show'])->name('prueba.show');
+
+Route::get('/prueba',[PruebaController::class, 'index'])->name('prueba.index');
+
+
+Route::post('/prueba/create',[PruebaController::class, 'create'])->name('prueba.create');

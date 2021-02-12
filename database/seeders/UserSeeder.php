@@ -20,26 +20,26 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345678'),
         ]);
 
-              $user->assignRole('Administrator');
+              $user->assignRole('Tributary');
 
 
         $user2 = User::create([
-        'name' => 'andres  Zambrano',
-        'email' => 'andres@ciaf.edu.co',
+        'name' => 'Paola Narvaes',
+        'email' => 'paola@ciaf.edu.co',
         'password' => bcrypt('12345678'),
         ]);
 
-                $user2->assignRole('SpeciallyUpdate');
+                $user2->assignRole('Veterinary');
 
 
 
-        $user3 = User::create([
-        'name' => 'sophia zapata',
-        'email' => 'shopia@ciaf.edu.co',
-        'password' => bcrypt('12345678'),
-        ]);
+        // $user3 = User::create([
+        // 'name' => 'sophia zapata',
+        // 'email' => 'shopia@ciaf.edu.co',
+        // 'password' => bcrypt('12345678'),
+        // ]);
 
-                $user3->assignRole('Coordinator');
+        //         $user3->assignRole('Coordinator');
 
                 
         User::factory(20)->create();
