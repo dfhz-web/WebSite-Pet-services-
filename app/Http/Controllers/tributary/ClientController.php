@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Http;
 
 class ClientController extends Controller
 {
+
+    public int $example;
+
+
     public function index()
     {
        $usuarios = HTTP::get('http://186.80.212.253:8081/api/Cliente');
@@ -15,7 +19,7 @@ class ClientController extends Controller
 
     
        
-
+            //    return $Array;
         return view('tributary.client.index',compact('Array'));
     }
 
@@ -27,12 +31,15 @@ class ClientController extends Controller
     }
 
 
-
+   
     public function create(Request $request)
     {     
+        $example = $request->id_tipo_identificacion;
             $result = HTTP::post('http://186.80.212.253:8081/api/Cliente',[
 
-            "id_tipo_identificacion" => $request->id_tipo_identificacion,
+           
+
+            'id_tipo_identificacion'  => $example,
             'no_identificacion' =>$request->no_identificacion,
             'id_naturaleza_tercero' =>$request->id_naturaleza_tercero,
             'id_regimen_tercero' =>$request->id_regimen_tercero,
@@ -56,17 +63,18 @@ class ClientController extends Controller
          
 
         ]);
-
         return $result;
+
+        return redirect()->route('client.index',compact('result'))->with('info','It was successfully updated');
+
+        // return $result;
 
        
 
-        // return redirect()->route('prueba.index',compact('result'));
-        $usuarios = HTTP::get('http://186.80.212.253:8081/api/Cliente');
-        $Array = $usuarios->json();
+        // $usuarios = HTTP::get('http://186.80.212.253:8081/api/Cliente');
+        // $Array = $usuarios->json();
 
-        // return view('tributary.prueba.index',compact('usuariosArray'))->with('info','It was successfully created');
-        return redirect()->route('client.index',compact('usuarios'))->with('info','It was successfully created');
+        // return redirect()->route('client.index',compact('usuarios'))->with('info','It was successfully created');
 
 
 
