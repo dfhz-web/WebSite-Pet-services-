@@ -14,6 +14,8 @@ class PruebaController extends Controller
        $usuarios = HTTP::get('http://jsonplaceholder.typicode.com/posts');
        $usuariosArray = $usuarios->json();
 
+       
+
         return view('tributary.prueba.index',compact('usuariosArray'));
     }
 
@@ -38,6 +40,8 @@ class PruebaController extends Controller
 
         ]);
 
+        return $result;
+
        
 
         // return redirect()->route('prueba.index',compact('result'));
@@ -47,7 +51,7 @@ class PruebaController extends Controller
         // return view('tributary.prueba.index',compact('usuariosArray'))->with('info','It was successfully created');
         return redirect()->route('prueba.index',compact('usuarios'))->with('info','It was successfully created');
 
-
+ 
 
 
     }

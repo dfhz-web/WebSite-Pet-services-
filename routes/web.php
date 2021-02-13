@@ -104,17 +104,18 @@ Route::delete('/prueba/{id}/destroy',[PruebaController::class, 'destroy'])->name
 
 
 
+
 Route::get('/client',[ClientController::class, 'index'])->name('client.index');
 
 Route::get('/client-show',[ClientController::class, 'show'])->name('client.show');
 
 Route::post('/client/create',[ClientController::class, 'create'])->name('client.create');
 
-Route::get('/client/{id}/edit',[ClientController::class, 'showedit'])->name('client.edit');
+Route::get('/client/{item}/edit',[ClientController::class, 'showedit'])->name('client.edit');
 
-Route::put('/client/{id}/update',[ClientController::class, 'update'])->name('client.update');
+Route::put('/client/{item}/update',[ClientController::class, 'update'])->name('client.update');
 
-Route::delete('/client/{id}/destroy',[ClientController::class, 'destroy'])->name('client.destroy');
+Route::delete('/client/{item}/destroy',[ClientController::class, 'destroy'])->name('client.destroy');
 
 
 

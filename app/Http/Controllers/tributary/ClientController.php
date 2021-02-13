@@ -13,6 +13,9 @@ class ClientController extends Controller
        $usuarios = HTTP::get('http://186.80.212.253:8081/api/Cliente');
        $Array =$usuarios->json();
 
+    
+       
+
         return view('tributary.client.index',compact('Array'));
     }
 
@@ -26,11 +29,10 @@ class ClientController extends Controller
 
 
     public function create(Request $request)
-    {
-        $result = HTTP::post('http://186.80.212.253:8081/api/Cliente',[
+    {     
+            $result = HTTP::post('http://186.80.212.253:8081/api/Cliente',[
 
-
-            'id_tipo_identificacion'=>$request->id_tipo_identificacion,
+            "id_tipo_identificacion" => $request->id_tipo_identificacion,
             'no_identificacion' =>$request->no_identificacion,
             'id_naturaleza_tercero' =>$request->id_naturaleza_tercero,
             'id_regimen_tercero' =>$request->id_regimen_tercero,
@@ -55,6 +57,8 @@ class ClientController extends Controller
 
         ]);
 
+        return $result;
+
        
 
         // return redirect()->route('prueba.index',compact('result'));
@@ -71,6 +75,7 @@ class ClientController extends Controller
 
     public function showedit($item)
     {
+       
 
         $result = Http::get('http://186.80.212.253:8081/api/Cliente/'.$item);
         $result->json();
