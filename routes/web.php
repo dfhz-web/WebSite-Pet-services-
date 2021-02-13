@@ -12,7 +12,10 @@ use App\Models\Module;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\AssistanceController;
+
+
 use App\Http\Controllers\tributary\PruebaController;
+use App\Http\Controllers\tributary\ClientController;
 
 
 Route::get('/',HomeController::class)->name('home');
@@ -96,6 +99,22 @@ Route::get('/prueba/{id}/edit',[PruebaController::class, 'showedit'])->name('pru
 Route::put('/prueba/{id}/update',[PruebaController::class, 'update'])->name('prueba.update');
 
 Route::delete('/prueba/{id}/destroy',[PruebaController::class, 'destroy'])->name('prueba.destroy');
+
+
+
+
+
+Route::get('/client',[ClientController::class, 'index'])->name('client.index');
+
+Route::get('/client-show',[ClientController::class, 'show'])->name('client.show');
+
+Route::post('/client/create',[ClientController::class, 'create'])->name('client.create');
+
+Route::get('/client/{id}/edit',[ClientController::class, 'showedit'])->name('client.edit');
+
+Route::put('/client/{id}/update',[ClientController::class, 'update'])->name('client.update');
+
+Route::delete('/client/{id}/destroy',[ClientController::class, 'destroy'])->name('client.destroy');
 
 
 

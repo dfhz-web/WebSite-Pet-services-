@@ -6,7 +6,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-40">
           <div class="w-full md:w-3/4 lg:w-1/2">
             <h1 class="text-black font-bold text-4xl cursor-default">Find what you lovely friend needs...!</h1>
-            <p class="text-black text-lg mt-2 mb-4 cursor-default">Here you will find any kind of service that you friend need, go ahead and find by yourself...</p>            
+            <p class="text-black text-lg mt-2 mb-4 cursor-default">Here your will find any kind of service that you friend need, go ahead and find by yourself...</p>            
 
               <!-- component -->
               <!-- This is an example component seach moved to livewire jeje-->
