@@ -108,10 +108,10 @@
                   </th>
 
                   
-                  <th scope="col" class="relative px-6 py-3">
+                  {{-- <th scope="col" class="relative px-6 py-3">
                       <a href="{{route('client.show')}}" class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline">Create</a>
               
-                  </th>
+                  </th> --}}
 
 
                 </tr>
@@ -255,7 +255,7 @@
               
 
 
-                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                      {{-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <a href="{{route('client.edit',$item['id_tercero'])}}" class="border border-yellow-500 text-yellow-500 rounded-md px-4 py-2 m-0 transition duration-500 ease select-none hover:text-white hover:bg-yellow-600 focus:outline-none focus:shadow-outline">Edit</a>
                       </td>
 
@@ -268,7 +268,7 @@
                         </form>
                      
                      
-                      </td>  
+                      </td>   --}}
               
                     </tr>
 

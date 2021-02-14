@@ -15,21 +15,33 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    private $cliente;
-
-    public function __construct()
-    {
-        $this->cliente = new Client([
-            'base_uri' => 'http://httpbin.org',
+    // public $cliente;
+    // http://186.80.212.253:8081/api/Cliente
+    // public function __construct()
+    // {
+    //     $this->cliente = new Client([
+    //         'base_uri' => 'http://186.80.212.253:8081/api/',
             
-       ]);
-    }
+    //    ]);
+    // }
 
 
     public function index()
     {
-        //
+        $cliente = new Client([
+            'base_uri' => 'http://186.80.212.253:8081/api/',
+            
+       ]);
+    
+       $response = $cliente->request('GET', 'Cliente');
+       $body = $response->getBody();
+       $Array = $body;
+       $Array->json();
+
+       return view('tributary.client.index',compact('Array'));
+
     }
+
 
     /**
      * Show the form for creating a new resource.

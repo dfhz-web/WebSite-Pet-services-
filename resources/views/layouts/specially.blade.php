@@ -41,7 +41,7 @@
                                                     <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('updates.beneficiaries',$module) border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('updates.beneficiaries',$module)}}">Beneficiaries</a></div> --}}
                                                     <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('prueba.index') border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('prueba.index')}}">Test</a></div> 
                                                     
-                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('client.index') border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('client.index')}}">Client</a></div> 
+                                                    <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4  @routeDetective('clients.index') border-blue-200 @else border-trasnparent @endif pl-2" href="{{route('clients.index')}}">Client</a></div> 
                                                     <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Departamento</a></div>
                                                     <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Detalle-factura</a></div>
                                                     <div class=""><a class="leading-8 mb-2 border-b-4 border-l-4">Empresa</a></div>
