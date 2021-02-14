@@ -36,6 +36,7 @@ class ClientController extends Controller
     {     
        
             $result = HTTP::post('http://186.80.212.253:8081/api/Cliente',[
+                // 'json' => $request->all()
 
             'id_tipo_identificacion'  => $request->id_tipo_identificacion,
             'no_identificacion' => $request->no_identificacion,
