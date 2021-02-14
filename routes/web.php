@@ -3,6 +3,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use GuzzleHttp\Client;
+
+
 use App\Http\Controllers\PostController;
 
 use App\Http\Controllers\HomeController;
@@ -118,7 +121,29 @@ Route::put('/client/{item}/update',[ClientController::class, 'update'])->name('c
 Route::delete('/client/{item}/destroy',[ClientController::class, 'destroy'])->name('client.destroy');
 
 
+Route::get('guzzle',function(){
 
+
+
+     
+
+     $client = new Client([
+    // Base URI is used with relative requests
+    'base_uri' => 'http://186.80.212.253:8081/api/',
+    // You can set any number of default request options.
+    'timeout'  => 2.0,
+     ]);
+
+     $response = $client->request('GET', 'Cliente');
+
+     // dd($response->getBody()->getContents());
+     return json_decode($response->getBody()->getContents());
+
+
+
+
+   return "well done";
+});
 
 
 

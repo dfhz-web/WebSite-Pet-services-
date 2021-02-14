@@ -34,13 +34,11 @@ class ClientController extends Controller
    
     public function create(Request $request)
     {     
-        $example = $request->id_tipo_identificacion;
+       
             $result = HTTP::post('http://186.80.212.253:8081/api/Cliente',[
 
-           
-
-            'id_tipo_identificacion'  => $example,
-            'no_identificacion' =>$request->no_identificacion,
+            'id_tipo_identificacion'  => $request->id_tipo_identificacion,
+            'no_identificacion' => $request->no_identificacion,
             'id_naturaleza_tercero' =>$request->id_naturaleza_tercero,
             'id_regimen_tercero' =>$request->id_regimen_tercero,
             'digito_verificacion' =>$request->digito_verificacion,
@@ -59,9 +57,11 @@ class ClientController extends Controller
             'usuario_registro' =>$request->usuario_registro,
             'fecha_registro' =>$request->fecha_registro,
             'estado_tercero' =>$request->estado_tercero,
-            'id_impuesto' =>$request->id_impuesto
+            'id_impuesto' =>$request->id_impuesto,
+            
          
 
+        
         ]);
         return $result;
 
@@ -101,6 +101,7 @@ class ClientController extends Controller
 
         $response = HTTP::put("http://186.80.212.253:8081/api/Cliente/$item",[
 
+
             'id_tipo_identificacion'=>$request->id_tipo_identificacion,
             'no_identificacion' =>$request->no_identificacion,
             'id_naturaleza_tercero' =>$request->id_naturaleza_tercero,
@@ -123,8 +124,9 @@ class ClientController extends Controller
             'estado_tercero' =>$request->estado_tercero,
             'id_impuesto' =>$request->id_impuesto
          ]);
-        //  return redirect()->route('prueba.index',compact('response'));
 
+        //  return redirect()->route('prueba.index',compact('response'));
+        return $response;
          $usuarios = HTTP::get('http://186.80.212.253:8081/api/Cliente');
         // $usuariosArray = $usuarios->json();
 
@@ -148,4 +150,7 @@ class ClientController extends Controller
 
 
     }
+
+
+  
 }
