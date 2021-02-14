@@ -21,6 +21,7 @@ use App\Http\Controllers\tributary\PruebaController;
 use App\Http\Controllers\tributary\ClientController;
 
 
+
 Route::get('/',HomeController::class)->name('home');
 
 
@@ -108,42 +109,31 @@ Route::delete('/prueba/{id}/destroy',[PruebaController::class, 'destroy'])->name
 
 
 
-Route::get('/client',[ClientController::class, 'index'])->name('client.index');
 
-Route::get('/client-show',[ClientController::class, 'show'])->name('client.show');
-
-Route::post('/client/create',[ClientController::class, 'create'])->name('client.create');
-
-Route::get('/client/{item}/edit',[ClientController::class, 'showedit'])->name('client.edit');
-
-Route::put('/client/{item}/update',[ClientController::class, 'update'])->name('client.update');
-
-Route::delete('/client/{item}/destroy',[ClientController::class, 'destroy'])->name('client.destroy');
+// Route::get('guzzle',function(){
 
 
-Route::get('guzzle',function(){
+//      $client = new Client([
+//     // Base URI is used with relative requests
+//     'base_uri' => 'http://186.80.212.253:8081/api/',
+//     // You can set any number of default request options.
+//     'timeout'  => 2.0,
+//      ]);
 
+//      $response = $client->request('GET', 'Cliente');
 
-
-     
-
-     $client = new Client([
-    // Base URI is used with relative requests
-    'base_uri' => 'http://186.80.212.253:8081/api/',
-    // You can set any number of default request options.
-    'timeout'  => 2.0,
-     ]);
-
-     $response = $client->request('GET', 'Cliente');
-
-     // dd($response->getBody()->getContents());
-     return json_decode($response->getBody()->getContents());
+//      // dd($response->getBody()->getContents());
+//      return json_decode($response->getBody()->getContents());
 
 
 
 
-   return "well done";
-});
+//    return "well done";
+// });
+
+
+
+Route::resource('/Client',ClientController::class)->names('clients');
 
 
 
