@@ -5,6 +5,9 @@ namespace App\Http\Controllers\tributary;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
+use GuzzleHttp\Client;
+
 class ClientController extends Controller
 {
     /**
@@ -12,6 +15,17 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $cliente;
+
+    public function __construct()
+    {
+        $this->cliente = new Client([
+            'base_uri' => 'http://httpbin.org',
+            
+       ]);
+    }
+
+
     public function index()
     {
         //
