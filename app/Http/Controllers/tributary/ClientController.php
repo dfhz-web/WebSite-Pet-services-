@@ -75,9 +75,34 @@ class ClientController extends Controller
        
         
 
-        $response = $cliente->post('Cliente', [
+          $response = $cliente->request('POST','http://186.80.212.253:8081/api/Client', [
+
+            // 'json' => $request->all()
+
+            'id_tipo_identificacion'  => $request->id_tipo_identificacion,
+            'no_identificacion' => $request->no_identificacion,
+            'id_naturaleza_tercero' =>$request->id_naturaleza_tercero,
+            'id_regimen_tercero' =>$request->id_regimen_tercero,
+            'digito_verificacion' =>$request->digito_verificacion,
+            'nombres_terceros' =>$request->nombres_terceros,
+            'apellidos_terceros' =>$request->apellidos_terceros,
+            'id_genero_tercero' =>$request->id_genero_tercero,
+            'fecha_nacimiento_tercero' =>$request->fecha_nacimiento_tercero,
+            'id_pais_tercero' =>$request->id_pais_tercero,
+            'id_departamento_tercero' =>$request->id_departamento_tercero,
+            'id_ciudad_tercero' =>$request->id_ciudad_tercero,
+            'razon_social_tercero' =>$request->razon_social_tercero,
+            'establecimento_comercial_tercero' =>$request->establecimento_comercial_tercero,
+            'direccion_tercero' =>$request->direccion_tercero,
+            'telefono1_tercero' =>$request->telefono1_tercero,
+            'telefono2_tercero' =>$request->telefono2_tercero,
+            'usuario_registro' =>$request->usuario_registro,
+            'fecha_registro' =>$request->fecha_registro,
+            'estado_tercero' =>$request->estado_tercero,
+            'id_impuesto' =>$request->id_impuesto,
             
         ]);
+        return "Well done";
 
         return redirect()->route('clients.index',$response);
     }
