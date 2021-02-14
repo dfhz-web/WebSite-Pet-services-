@@ -75,16 +75,9 @@ class ClientController extends Controller
        
         
 
-        $response = $cliente->request('POST', 'Cliente', [
-            
-            'form_params' => [
-                'json' => $request->all()
-            ]
-            
+        $response = $cliente->post('Cliente', [
             
         ]);
-
-        return $response;
 
         return redirect()->route('clients.index',$response);
     }
