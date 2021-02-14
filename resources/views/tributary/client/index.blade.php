@@ -108,10 +108,10 @@
                   </th>
 
                   
-                  {{-- <th scope="col" class="relative px-6 py-3">
-                      <a href="{{route('client.show')}}" class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline">Create</a>
+                   <th scope="col" class="relative px-6 py-3">
+                      <a href="{{route('clients.create')}}" class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline">Create</a>
               
-                  </th> --}}
+                  </th> 
 
 
                 </tr>
@@ -119,31 +119,31 @@
 
               <tbody class="bg-white divide-y divide-gray-200">
           
-                 @foreach ($Array as $item)
+                 @foreach ($response as $item)
                     <tr>
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['id_tercero']}}
+                        {{$item->id_tercero}}
                       </td>
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['id_tipo_identificacion']}}
+                        {{$item->id_tipo_identificacion}}
                       </td>
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['no_identificacion']}}
+                        {{$item->no_identificacion}}
                       </td>
 
                       
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['id_naturaleza_tercero']}}
+                        {{$item->id_naturaleza_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['id_regimen_tercero']}}
+                        {{$item->id_regimen_tercero}}
                       </td>
                       
                       
@@ -151,104 +151,104 @@
 
 
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['digito_verificacion']}}
+                        {{$item->digito_verificacion}}
                       </td>
 
 
 
                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['nombres_terceros']}}
+                        {{$item->nombres_terceros}}
                       </td>
 
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {{$item['apellidos_terceros']}}
+                      {{$item->apellidos_terceros}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                       {{$item['id_genero_tercero']}}
+                       {{$item->id_genero_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['fecha_nacimiento_tercero']}}
+                        {{$item->fecha_nacimiento_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                       {{$item['id_pais_tercero']}}
+                       {{$item->id_pais_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['id_departamento_tercero']}}
+                        {{$item->id_departamento_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                       {{$item['id_ciudad_tercero']}}
+                       {{$item->id_ciudad_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                       {{$item['razon_social_tercero']}}
+                       {{$item->razon_social_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['establecimento_comercial_tercero']}}
+                        {{$item->establecimento_comercial_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['direccion_tercero']}}
+                        {{$item->direccion_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['telefono1_tercero']}}
+                        {{$item->telefono1_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                       {{$item['telefono2_tercero']}}
+                       {{$item->telefono2_tercero}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['usuario_registro']}}
+                        {{$item->usuario_registro}}
                       </td>
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['fecha_registro']}}
+                        {{$item->fecha_registro}}
                       </td>
 
 
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['estado_tercero']}}
+                        {{$item->estado_tercero}}
                       </td>
 
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{$item['id_impuesto']}}
+                        {{$item->id_impuesto}}
                       </td>
 
 

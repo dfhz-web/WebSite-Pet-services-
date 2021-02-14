@@ -4,7 +4,7 @@
     <h1 class="text-center">Client-create</h1>
 
 
-    {!! Form::open(['route' => 'client.create']) !!}
+    {!! Form::open(['route' => 'clients.store']) !!}
                   
    <div class="mb-5">
   {!! Form::label('id_tipo_identificacion', " id_tipo_identificacion:") !!}

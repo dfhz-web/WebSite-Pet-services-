@@ -34,11 +34,17 @@ class ClientController extends Controller
        ]);
     
        $response = $cliente->request('GET', 'Cliente');
-       $body = $response->getBody();
-       $Array = $body;
-       $Array->json();
+   
+       $response = json_decode($response->getBody()->getContents());
 
-       return view('tributary.client.index',compact('Array'));
+  
+
+
+      //      // dd($response->getBody()->getContents());
+      //      return json_decode($response->getBody()->getContents());
+      
+
+       return view('tributary.client.index',compact('response'));
 
     }
 
@@ -50,7 +56,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('tributary.client.create');
     }
 
     /**
@@ -61,7 +67,26 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $cliente = new Client([
+            'base_uri' => 'http://186.80.212.253:8081/api/',
+            
+       ]);
+       
+        
+
+        $response = $cliente->request('POST', 'Cliente', [
+            
+            'form_params' => [
+                'json' => $request->all()
+            ]
+            
+            
+        ]);
+
+        return $response;
+
+        return redirect()->route('clients.index',$response);
     }
 
     /**
